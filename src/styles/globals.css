@@ -1,0 +1,61 @@
+@import "@fontsource/inter/index.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+@layer utilities {
+  .hide-scrollbar {
+    overflow: auto;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    scrollbar-width: none;
+  }
+  .animate-shimmer {
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
+
+.btn {
+  @apply bg-black text-white bg-opacity-80 w-full h-[40px] flex justify-center items-center rounded-md hover:bg-opacity-100 transition;
+}
+.input {
+  @apply border-gray-200 border border-solid p-2 w-full h-[40px] rounded-[5px] outline-none focus:border-blue-500;
+}
+.label {
+  @apply block text-base font-medium;
+}
+
+.heading {
+  @apply text-3xl font-bold text-[#0E1422];
+}
+.heading_2 {
+  @apply text-xl font-semibold;
+}
+.sub_heading {
+  @apply text-lg text-[#5C5F6A];
+}
+.sub_heading_2 {
+  @apply text-lg text-[#0E1422] font-bold;
+}
+.breadcrump_item {
+  @apply flex gap-1 text-sm sm:text-base md:text-[16px] lg:text-[17px];
+}
