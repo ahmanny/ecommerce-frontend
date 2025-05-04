@@ -12,7 +12,7 @@ export default function BestsellingProducts({
 }: BestsellingProductsProps) {
   return (
     <div className="space-y-8">
-      <div className="w-full flex flex-col justify-center items-center">
+      <div>
         <h1 className="sub_heading">Shop Now</h1>
         <h1 className="heading">Best Selling</h1>
       </div>

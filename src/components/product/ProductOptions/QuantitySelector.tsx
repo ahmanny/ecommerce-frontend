@@ -21,15 +21,15 @@ export default function QuantitySelector({
       <div className="flex items-center h-12 rounded-md border text-[#5C5F6A] text-xl w-fit">
         <button
           type="button"
-          className=" px-6 h-full text-3xl"
+          className=" px-3 md:px-6 h-full text-2xl md:text-3xl"
           onClick={handleDecrease}
         >
           -
         </button>
-        <span className="px-7">{quantity}</span>
+        <span className=" px-4 md:px-7">{quantity}</span>
         <button
           type="button"
-          className=" px-6 h-full text-3xl"
+          className=" px-3 md:px-6 h-full text-2xl md:text-3xl"
           onClick={handleIncrease}
         >
           +

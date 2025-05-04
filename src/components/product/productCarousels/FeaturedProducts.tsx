@@ -13,7 +13,7 @@ export default function FeaturedProducts({
   isLoading,
 }: FeaturedProductsProps) {
   return (
-    <div className="w-full px-20 py-10">
+    <div>
       <ProductCarousel
         isLoading={isLoading}
         productsToBeDisplayed={featuredProducts}

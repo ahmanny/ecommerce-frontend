@@ -15,14 +15,14 @@ export default function page() {
       <div className=" py-20">
         <SpecialOffer />
       </div>
-      <div className="px-14">
+      <div>
         <BestsellingProducts
           isLoading={isLoading}
           bestSelling={data?.bestSelling || []}
         />
       </div>
       <BrowseFashion />
-      <div className=" py-40 px-14">
+      <div>
         <HomepageTab
           isLoading={isLoading}
           featuredProducts={data?.featured || []}

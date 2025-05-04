@@ -13,7 +13,7 @@ export default function LatestProducts({
   isLoading,
 }: LatestProductsProps) {
   return (
-    <div className="w-full px-20 py-10">
+    <div>
       <ProductCarousel
         emptyMessage="No Latest Products available"
         isLoading={isLoading}
