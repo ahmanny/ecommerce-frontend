@@ -35,7 +35,7 @@ export default function WhishlistItemCard({ item, date }: ItemProps) {
   };
 
   return (
-    <div className="w-full p-5">
+    <div className="w-full">
       <div className="flex md:items-center justify-between lg:mb-4">
         {/* Product Image */}
         <div className="w-[80px] h-[80px] rounded-md overflow-hidden bg-gray-100">
