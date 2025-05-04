@@ -113,7 +113,7 @@ export default function WishlistAddToCartForm({ item }: Props) {
         <button
           type="button"
           onClick={() => setStep(step + 1)}
-          className="border border-black py-[8px] px-[18px] capitalize rounded-md"
+          className="border border-black py-[8px] px-2 md:px-[18px] capitalize rounded-md"
         >
           Add to cart
         </button>

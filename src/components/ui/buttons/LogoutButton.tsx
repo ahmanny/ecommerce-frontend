@@ -6,19 +6,26 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 interface LogoutButtonProps {
   iconOnly?: boolean;
+  routeTo: string;
 }
-export default function LogoutButton({ iconOnly }: LogoutButtonProps) {
+export default function LogoutButton({ iconOnly, routeTo }: LogoutButtonProps) {
   const logout = useLogoutUser();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const handleLogout = () => {
     setLoading(true);
 
-    // Simulate the logout process and hide the loader after 4 seconds
-    setTimeout(() => {
-      setLoading(false);
-      router.push("/admin/login");
-    }, 4000);
+    // Call the logout mutation
+    logout.mutate(undefined, {
+      onSuccess: () => {
+        // Handle successful logout here (e.g., redirect to login page)
+        router.push(routeTo);
+      },
+      onError: (error) => {
+        // Handle error here (e.g., show error message)
+        console.error("Logout failed:", error);
+      },
+    });
   };
   return (
     <div>
@@ -26,7 +33,7 @@ export default function LogoutButton({ iconOnly }: LogoutButtonProps) {
         onClick={handleLogout}
         className="capitalize text-[#5C5F6A] flex  mx-auto px-5 py-2 gap-3 hover:bg-[#F6F6F6] items-center rounded-md "
       >
-        {loading ? (
+        {logout.isPending ? (
           <SpinnerOne />
         ) : (
           <>

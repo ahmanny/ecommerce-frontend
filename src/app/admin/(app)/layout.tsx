@@ -17,7 +17,7 @@ export default function AdminAppLayout({
       <div className=" flex-1 pt-5">
         <div className=" h-[75px] flex justify-between items-center  pr-8">
           <BreadCrumbTwo />
-          <LogoutButton iconOnly />
+          <LogoutButton routeTo="/admin/login" iconOnly />
         </div>
         <div className="mt-12">{children}</div>
       </div>

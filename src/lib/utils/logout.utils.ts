@@ -5,7 +5,7 @@ import { useUiStore } from '@/store/UiStore';
 import { useCartStore } from '@/store/CartStore';
 import { useOrderStore } from '@/store/OrderStore';
 
-export const logout = () => {
+export const logout = async () => {
     // 1. Remove the token from cookies
     destroyCookie(null, "access-token", { path: '/' });
     destroyCookie(null, "refresh-token", { path: '/' });
@@ -24,5 +24,4 @@ export const logout = () => {
     wishlistStore.clearWishlist();
     orderStore.clearOrder();
     uiStore.reset();
-
 };

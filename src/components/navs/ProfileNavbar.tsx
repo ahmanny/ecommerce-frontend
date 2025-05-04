@@ -26,7 +26,7 @@ export default function ProfileNavBar() {
       <div className="w-full">
         <div className="flex flex-col gap-4">
           <Navs parentHref="/my-account" navs={adminDashBoardNavs} />
-          <LogoutButton iconOnly={false} />
+          <LogoutButton routeTo="/" iconOnly={false} />
         </div>
       </div>
     </div>

@@ -14,9 +14,13 @@ export const loginUser = async (credential: { email: string, password: string })
     return data
 }
 
+export const loginAdmin = async (credential: { email: string, password: string }) => {
+    const { data } = await API.post("/authentication/login", credential);
+    return data
+}
 // logout user
-export const logoutUser = async () => {
-    const { data } = await API.post("/authentication/logout");
+export const logoutUser = async ({ refresh_token }: { refresh_token: string }) => {
+    const { data } = await API.post("/authentication/logout", { refresh_token });
     return data
 }
 
@@ -29,10 +33,5 @@ export const fogottenPassword = async (credential: { email: string }) => {
 // Reset Password
 export const resetPassword = async (credential: { newPassword: string, token?: string }) => {
     const { data } = await API.post("/authentication/reset-password", credential)
-    return data
-}
-
-export const loginAdmin = async (credential: { email: string, password: string }) => {
-    const { data } = await API.post("/authentication/login", credential);
     return data
 }

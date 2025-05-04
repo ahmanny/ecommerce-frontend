@@ -34,7 +34,7 @@ export default function ColorPicker({
             onClick={() => setSelectedColor(color)}
           >
             <span
-              className={`h-10 w-10 rounded-full  block`}
+              className={`h-5 w-5 md:h-10 md:w-10 rounded-full  block`}
               style={{ backgroundColor: color }}
             ></span>
           </button>
