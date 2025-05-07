@@ -1,4 +1,4 @@
-import UserWishList from "@/components/my-account/UserWishList";
+import UserWishList from "@/components/my-account/wishlist/UserWishList";
 
 export default function page() {
   return (

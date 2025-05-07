@@ -1,6 +1,6 @@
 "use client";
-import { item } from "@/components/my-account/ItemCard";
-import UserOrders from "@/components/my-account/UserOrders";
+import { item } from "@/components/my-account/orders/ItemCard";
+import UserOrders from "@/components/my-account/orders/UserOrders";
 import PageSkeleton from "@/components/ui/loaders/skeletons/PageSkeleton";
 import ErrorState from "@/components/ui/states/ErrorState";
 import { useFetchUserOrders } from "@/services/orders/ordersQueries";
@@ -17,8 +17,7 @@ export default function Page() {
   }, [orders]);
 
   if (isLoading) return <PageSkeleton />;
-  if ((isError))
-    return <ErrorState message={error?.message} onRetry={refetch} />;
+  if (isError) return <ErrorState message={error?.message} onRetry={refetch} />;
 
   return (
     <div>

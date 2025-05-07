@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import WhishlistItemCard from "./wishlist";
 import { useWishlistStore } from "@/store/WishlistStore";
-import EmptyState from "../ui/states/EmptyState";
+import EmptyState from "@/components/ui/states/EmptyState";
+import WhishlistItemCard from ".";
 
 export default function UserWishList() {
   const { items } = useWishlistStore();

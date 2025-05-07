@@ -51,11 +51,15 @@ body {
   @apply text-xl font-semibold;
 }
 .sub_heading {
-  @apply text-lg text-[#5C5F6A];
+  @apply text-lg text-[#878A92];
 }
 .sub_heading_2 {
   @apply text-lg text-[#0E1422] font-bold;
 }
 .breadcrump_item {
   @apply flex gap-1 text-sm sm:text-base md:text-[16px] lg:text-[17px];
+}
+
+.date {
+  @apply text-gray-500 text-xs md:text-base;
 }

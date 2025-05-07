@@ -50,7 +50,7 @@ export default function WhishlistItemCard({ item, date }: ItemProps) {
           <h2 className="text-base md:text-lg font-semibold capitalize">
             {item.title}
           </h2>
-          <p className="text-gray-500 text-xs md:text-base flex items-center gap-2">
+          <p className="date flex items-center gap-2">
             {"Added on: "}
             {date}
           </p>

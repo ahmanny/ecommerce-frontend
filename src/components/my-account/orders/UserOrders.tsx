@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ItemCard, { item } from "./ItemCard";
-import EmptyState from "../ui/states/EmptyState";
+import EmptyState from "../../ui/states/EmptyState";
 import { useRouter } from "next/navigation";
 
 interface UserOrdersListProps {
@@ -12,9 +12,9 @@ export default function UserOrders({ items }: UserOrdersListProps) {
   const viewItem = () => {
     console.log("helo");
   };
-  const router = useRouter()
+  const router = useRouter();
   return (
-    <div className=" py-14">
+    <div className=" py-14  md:pr-[32px] ">
       {items.length > 0 ? (
         items.map((item) => (
           <ItemCard
