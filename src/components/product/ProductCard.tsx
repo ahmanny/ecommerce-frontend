@@ -12,13 +12,13 @@ export default function ProductCard({ product }: ProductCardProps) {
       href={`/products/${product.slug}-${product._id}`}
       className="block h-full "
     >
-      <div className="flex flex-col h-full p-4 justify-between rounded-lg md:w-fit bg-white">
+      <div className="flex flex-col h-full p-4 justify-between rounded-lg w-[150px] md:w-[190px]  lg:w-[220px]   xl:w-[264px]  bg-white">
         {/* Image wrapper that grows to fill space */}
-        <div className="flex-grow bg-[#F6F6F6] rounded-lg flex justify-center items-center overflow-hidden">
+        <div className=" bg-[#F6F6F6] rounded-lg w-full h-3/4 flex justify-center items-center overflow-hidden">
           <img
             src={product.images[0]}
             alt={product.title}
-            className="object-contain max-h-40 md:max-h-56 lg:max-h-64"
+            className="w-3/4 h-5/6 object-cover rounded-lg"
           />
         </div>
 
