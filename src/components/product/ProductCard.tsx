@@ -18,7 +18,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <img
             src={product.images[0]}
             alt={product.title}
-            className="object-contain max-h-40 md:max-h-56 lg:max-h-64"
+            className="object-contain h-full"
           />
         </div>
 
