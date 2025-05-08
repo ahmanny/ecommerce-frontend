@@ -37,7 +37,7 @@ export default function ProductReviewCard({
           <Rating value={rating} readOnly />
         </div>
       </div>
-      <hr className="my-3 w-full" />
+      <hr className="my-2 w-full" />
     </div>
   );
 }
