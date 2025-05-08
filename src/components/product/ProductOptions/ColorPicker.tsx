@@ -6,9 +6,11 @@ interface ColorPickerProps {
   selectedColor: string;
   setSelectedColor: (color: string) => void;
   errors?: any;
+  classSize?: string;
 }
 
 export default function ColorPicker({
+  classSize = "h-10 w-10",
   colors,
   selectedColor,
   setSelectedColor,
@@ -34,7 +36,7 @@ export default function ColorPicker({
             onClick={() => setSelectedColor(color)}
           >
             <span
-              className={`h-5 w-5 md:h-10 md:w-10 rounded-full  block`}
+              className={`${classSize} rounded-full  block`}
               style={{ backgroundColor: color }}
             ></span>
           </button>

@@ -121,6 +121,7 @@ export default function WishlistAddToCartForm({ item }: Props) {
 
       {step === 1 && (
         <ColorPicker
+          classSize="h-5 w-5 md:h-10 md:w-10"
           colors={item.colors}
           selectedColor={selectedColor}
           setSelectedColor={(color) => setValue("color", color)}
@@ -129,6 +130,7 @@ export default function WishlistAddToCartForm({ item }: Props) {
 
       {step === 2 && (
         <SizeSelector
+          classSize="h-6 w-6 md:h-12 md:w-12"
           sizes={item.sizes}
           selectedSize={selectedSize}
           setSelectedsize={(size) => setValue("size", size)}

@@ -94,7 +94,10 @@ export default function ProductOptions({
   };
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-12">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-5 md:gap-12"
+      >
         {/* available colors display */}
         <div>
           <ColorPicker

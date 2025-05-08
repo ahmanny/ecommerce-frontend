@@ -3,6 +3,7 @@ interface SizeSelectorProps {
   selectedSize: string;
   setSelectedsize: (size: string) => void;
   errors?: any;
+  classSize?: string;
 }
 
 export default function SizeSelector({
@@ -10,6 +11,7 @@ export default function SizeSelector({
   selectedSize,
   setSelectedsize,
   errors,
+  classSize = "h-12 w-12",
 }: SizeSelectorProps) {
   return (
     <div>
@@ -23,7 +25,7 @@ export default function SizeSelector({
           <button
             key={size}
             type="button"
-            className={` h-6 w-6 md:h-12 md:w-12 border text-sm rounded-md flex items-center  justify-center ${
+            className={` ${classSize} border text-sm rounded-md flex items-center  justify-center ${
               selectedSize === size ? "border-black" : ""
             }`}
             onClick={() => setSelectedsize(size)}
