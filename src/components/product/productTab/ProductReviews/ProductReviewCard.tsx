@@ -31,10 +31,10 @@ export default function ProductReviewCard({
             <h1 className="text-xl">{user.name}</h1>
             <h1 className="date uppercase">{date}</h1>
           </div>
-          <p className="text-[#5C5F6A] text-base">{comment}</p>
-        </div>
-        <div>
-          <Rating value={rating} readOnly />
+          <div className="w-full flex justify-between items-center">
+            <p className="text-[#5C5F6A] text-base">{comment}</p>
+            <Rating value={rating} readOnly />
+          </div>
         </div>
       </div>
       <hr className="my-2 w-full" />
