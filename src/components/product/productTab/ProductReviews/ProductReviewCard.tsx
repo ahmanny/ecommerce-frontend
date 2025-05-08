@@ -18,7 +18,7 @@ export default function ProductReviewCard({
 }: ProductReviewCardProps) {
   return (
     <div>
-      <div className="flex gap-10 items-start flex-col md:flex-row px-3 py-8">
+      <div className="flex gap-3 md:gap-10 items-start flex-col md:flex-row px-3 py-8">
         {/* user avater image */}
         <div>
           <Avatar.Root shape="full" size="2xl" colorPalette={"blue"}>
@@ -27,9 +27,9 @@ export default function ProductReviewCard({
           </Avatar.Root>
         </div>
         <div className="flex-1">
-          <div className="mb-3">
+          <div className="md:mb-3">
             <h1 className="text-xl">{user.name}</h1>
-            <h1 className="text-[#5C5F6A] uppercase text-base">{date}</h1>
+            <h1 className="date uppercase">{date}</h1>
           </div>
           <p className="text-[#5C5F6A] text-base">{comment}</p>
         </div>
@@ -37,6 +37,7 @@ export default function ProductReviewCard({
           <Rating value={rating} readOnly />
         </div>
       </div>
+      <hr className="my-3 w-full" />
     </div>
   );
 }
