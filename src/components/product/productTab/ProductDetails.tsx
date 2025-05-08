@@ -12,8 +12,10 @@ export default function ProductDetails({
     <div className="w-full ">
       <h1 className="heading_2 mb-4">Details</h1>
       <div className="flex flex-col gap-16">
-        <p className="text-[#5C5F6A] text-xl font-medium">{details}</p>
-        <div className="text-[#5C5F6A] text-xl font-semibold">
+        <p className="text-[#5C5F6A] text-base md:text-xl font-medium">
+          {details}
+        </p>
+        <div className="text-[#5C5F6A] text-base md:text-xl font-semibold">
           <ul className=" list-disc pl-4">
             {highlights.map((highlight, index) => (
               <li key={index}>{highlight}</li>

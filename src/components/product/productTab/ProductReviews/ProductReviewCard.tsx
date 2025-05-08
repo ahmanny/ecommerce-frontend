@@ -18,7 +18,7 @@ export default function ProductReviewCard({
 }: ProductReviewCardProps) {
   return (
     <div>
-      <div className="flex gap-10 items-start px-3 py-8">
+      <div className="flex gap-10 items-start flex-col md:flex-row px-3 py-8">
         {/* user avater image */}
         <div>
           <Avatar.Root shape="full" size="2xl" colorPalette={"blue"}>

@@ -10,14 +10,14 @@ export default function ProductSkeleton() {
       </div>
 
       {/* Text Skeletons */}
-      <div className="mt-4">
+      <div className="mt-2">
         {/* Title */}
-        <SkeletonText noOfLines={1} wordSpacing={"2"} />
+        <Skeleton height="10px" width="60px" />
 
         {/* Stock + Price */}
-        <div className="lg:flex items-center justify-between mt-4 space-y-2 lg:space-y-0">
-          <Skeleton height="15px" width="80px" borderRadius="full" />
-          <Skeleton height="10px" width="60px" />
+        <div className="lg:flex items-center justify-between mt-2 space-y-2 lg:space-y-0">
+          <Skeleton height="15px" width="50px" borderRadius="full" />
+          <Skeleton height="10px" width="40px" />
         </div>
       </div>
     </div>
