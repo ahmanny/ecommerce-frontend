@@ -9,7 +9,7 @@ export default function CartDrawerItem({ item }: CartItemProps) {
   const { removeFromCart, updateQuantity } = useCartStore();
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center gap-7 md:gap-20 ">
       {/* Product Image */}
       <div className="w-24 h-24 rounded-md overflow-hidden bg-gray-100">
         <img

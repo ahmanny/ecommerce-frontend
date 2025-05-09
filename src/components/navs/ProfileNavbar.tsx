@@ -22,7 +22,7 @@ const adminDashBoardNavs = [
 
 export default function ProfileNavBar() {
   return (
-    <div className="flex flex-col items-center w-full py-10 lg:border-r">
+    <div className="flex flex-col items-center w-full lg:border-r">
       <div className="w-full">
         <div className="flex flex-col gap-4">
           <Navs parentHref="/my-account" navs={adminDashBoardNavs} />

@@ -52,6 +52,7 @@ export const useFetchUserCart = () => {
         queryKey: ["user-cart"],
         queryFn: async () => {
             const items = await getUserCart();
+            console.log("cart items", items)
             cartStore.setCartItems(items)
             return items
         },

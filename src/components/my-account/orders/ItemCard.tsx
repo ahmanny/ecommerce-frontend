@@ -35,7 +35,7 @@ export default function ItemCard({ item, btn, btnText }: ItemProps) {
 
         {/* Product Details */}
         <div className="flex-1 px-4">
-          <h2 className="text-base md:text-lg font-semibold capitalize">
+          <h2 className="text-lg lg:text-xl font-semibold capitalize">
             {item.title}
           </h2>
           <p className="date flex items-center gap-2">

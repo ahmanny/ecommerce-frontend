@@ -20,6 +20,7 @@ export const deleteCart = async (id: string) => {
 
 export const getUserCart = async () => {
     const { data } = await API.get("/cart/get")
+    console.log(data);
     const transformedItems: StoreCartItem[] = data.cart.items.map(
         (item: any) => ({
             id: item._id,
@@ -33,5 +34,6 @@ export const getUserCart = async () => {
             size: item.size,
         })
     );
+    console.log(transformedItems);
     return transformedItems;
 }

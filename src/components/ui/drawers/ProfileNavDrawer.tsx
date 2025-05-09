@@ -27,6 +27,7 @@ export default function ProfileNavDrawer({ button }: ProfileNavDrawerProps) {
   return (
     <div>
       <DrawerRoot
+        placement={"start"}
         open={isProfileNavOpen}
         onOpenChange={(details) => setProfileNavOpen(details.open)}
       >
@@ -40,7 +41,11 @@ export default function ProfileNavDrawer({ button }: ProfileNavDrawerProps) {
             left={"0"}
             right={"0"}
           >
-            <DrawerContent roundedBottomRight={"lg"} roundedTopRight={"lg"}>
+            <DrawerContent
+              width={"fit"}
+              roundedBottomRight={"lg"}
+              roundedTopRight={"lg"}
+            >
               <DrawerHeader>
                 <div className="flex items-center justify-between !mb-3">
                   <DrawerTitle className="!text-2xl !font-semibold">
