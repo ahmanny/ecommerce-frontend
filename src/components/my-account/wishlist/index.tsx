@@ -6,23 +6,13 @@ import toast from "react-hot-toast";
 import { IWishlistItem } from "@/types/wishlist.types";
 import { useDeleteWishlist } from "@/services/wishlist/wishlistQueries";
 import WishlistAddToCartForm from "./WishlistAddToCartForm";
-
-export interface item {
-  title: string;
-  image: string;
-  price: number;
-  color?: string;
-  size?: string;
-  date: string;
-  orderStatus?: string;
-}
+import { formatDate } from "@/lib/utils/date.utils";
 
 interface ItemProps {
   item: IWishlistItem;
-  date: string;
 }
 
-export default function WhishlistItemCard({ item, date }: ItemProps) {
+export default function WhishlistItemCard({ item }: ItemProps) {
   const wishlistDelete = useDeleteWishlist();
 
   const removeItem = () => {
@@ -52,7 +42,7 @@ export default function WhishlistItemCard({ item, date }: ItemProps) {
           </h2>
           <p className="date flex items-center gap-2">
             {"Added on: "}
-            {date}
+            {formatDate(item.addedAt)}
           </p>
           <div className="text-lg font-bold mr-4 mt-4 lg:hidden">
             ${item.price.toFixed(2)}
@@ -75,7 +65,7 @@ export default function WhishlistItemCard({ item, date }: ItemProps) {
       </div>
 
       {/* Remove button for smaller screens */}
-      <div className="flex justify-between mb-4 lg:hidden">
+      <div className="flex justify-between items-center mb-4 lg:hidden">
         <button type="button" onClick={removeItem}>
           Remove Item
         </button>

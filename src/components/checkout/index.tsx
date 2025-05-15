@@ -105,8 +105,8 @@ export default function CheckOut() {
       ) : (
         <div className=" w-full">
           <EmptyState
-            message="There is no item in cart"
-            subtitle="Click on start shopping to add items to cart"
+            message="Your cart is empty."
+            subtitle="Click 'Start shopping' to add items to your cart"
             btnText="Start Shopping"
             action={() => router.push("/products/search")}
           />

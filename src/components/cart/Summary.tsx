@@ -1,10 +1,11 @@
 "use client";
 import { useCartStore } from "@/store/CartStore";
 import { BeatLoader } from "react-spinners";
+import CheckoutButton from "../ui/buttons/CheckoutButton";
 
 interface SummaryProps {
-  submitBtnText: string;
-  isLoading: boolean;
+  submitBtnText?: string;
+  isLoading?: boolean;
 }
 export default function Summary({ submitBtnText, isLoading }: SummaryProps) {
   const { items } = useCartStore();
@@ -34,12 +35,16 @@ export default function Summary({ submitBtnText, isLoading }: SummaryProps) {
         <span>Total:</span>
         <span>${total.toFixed(2)}</span>
       </div>
-      <button
-        type="submit"
-        className="w-full bg-black text-white py-2 mt-8 rounded"
-      >
-        {isLoading ? <BeatLoader color="#3498db" /> : submitBtnText}
-      </button>
+      {submitBtnText ? (
+        <button
+          type="submit"
+          className="w-full bg-black text-white py-2 mt-8 rounded"
+        >
+          {isLoading ? <BeatLoader color="#3498db" /> : submitBtnText}
+        </button>
+      ) : (
+        <CheckoutButton classes="bg-black text-white" />
+      )}
     </div>
   );
 }

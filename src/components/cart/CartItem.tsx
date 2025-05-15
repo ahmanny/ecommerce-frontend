@@ -41,42 +41,45 @@ export default function CartItem({ item }: CartItemProps) {
           className="w-full h-full object-cover"
         />
       </div>
+      <div className="flex-1 px-4 flex flex-col sm:flex-row justify-between">
+        {/* Product Details */}
+        <div className="">
+          <h2 className="text-lg font-semibold capitalize">{item.title}</h2>
+          <p className="text-gray-500 text-sm flex items-center gap-2">
+            <span className="flex items-center gap-1">
+              Color:
+              <span
+                className="w-4 h-4 rounded-full"
+                style={{ backgroundColor: item.color }}
+              />
+            </span>
+            — Size: {item.size}
+          </p>
+        </div>
+        {/* price and quantity selector */}
+        <div className="flex items-center">
+          {/* Product Price */}
+          <div className="text-lg font-bold mr-4">${item.price.toFixed(2)}</div>
 
-      {/* Product Details */}
-      <div className="flex-1 px-4">
-        <h2 className="text-lg font-semibold capitalize">{item.title}</h2>
-        <p className="text-gray-500 text-sm flex items-center gap-2">
-          <span className="flex items-center gap-1">
-            Color:
-            <span
-              className="w-4 h-4 rounded-full"
-              style={{ backgroundColor: item.color }}
-            />
-          </span>
-          — Size: {item.size}
-        </p>
-      </div>
-
-      {/* Product Price */}
-      <div className="text-lg font-bold mr-4">${item.price.toFixed(2)}</div>
-
-      {/* Quantity Selector */}
-      <div className="flex items-center border rounded-md">
-        <button
-          onClick={() =>
-            updateQuantity(item.uniqueId, Math.max(1, item.quantity - 1))
-          }
-          className="px-3 py-1 text-lg"
-        >
-          -
-        </button>
-        <span className="px-4">{item.quantity}</span>
-        <button
-          onClick={() => updateQuantity(item.uniqueId, item.quantity + 1)}
-          className="px-3 py-1 text-lg"
-        >
-          +
-        </button>
+          {/* Quantity Selector */}
+          <div className="flex items-center border rounded-md">
+            <button
+              onClick={() =>
+                updateQuantity(item.uniqueId, Math.max(1, item.quantity - 1))
+              }
+              className="px-3 py-1 text-lg"
+            >
+              -
+            </button>
+            <span className="px-4">{item.quantity}</span>
+            <button
+              onClick={() => updateQuantity(item.uniqueId, item.quantity + 1)}
+              className="px-3 py-1 text-lg"
+            >
+              +
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Remove Button */}

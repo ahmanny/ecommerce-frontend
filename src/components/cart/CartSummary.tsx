@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Summary from "./Summary";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 
 export default function CartSummary() {
   const [isLoading, setIsloading] = useState(false);
@@ -18,7 +17,7 @@ export default function CartSummary() {
   return (
     <form onSubmit={submitCart} className="border p-8 rounded-lg ">
       <h2 className="text-lg font-semibold pb-5">Order Summary</h2>
-      <Summary submitBtnText="Checkout" isLoading={isLoading} />
+      <Summary />
     </form>
   );
 }

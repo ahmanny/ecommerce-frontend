@@ -10,7 +10,7 @@ export default function UserWishList() {
     <div className=" py-14 space-y-4">
       {items.length > 0 ? (
         items.map((item) => (
-          <WhishlistItemCard key={item.title} item={item} date="23 june 2020" />
+          <WhishlistItemCard key={item.title} item={item} />
         ))
       ) : (
         <EmptyState message="No wishlist added" />

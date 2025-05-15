@@ -22,8 +22,10 @@ export default function CartDrawerItem({ item }: CartItemProps) {
       <div className="flex-1 flex flex-col justify-center gap-3">
         {/* Product Details */}
         <div className=" flex gap-3">
-          <h2 className="text-xl font-semibold capitalize">{item.title}</h2>
-          <p className="text-gray-500 text-lg flex items-center gap-2">
+          <h2 className=" text-lg md:text-xl font-semibold capitalize">
+            {item.title}
+          </h2>
+          <p className="text-gray-500 text-base md:text-lg flex items-center gap-2">
             <span className="flex items-center gap-1">
               <span
                 className="w-6 h-6 rounded-full"

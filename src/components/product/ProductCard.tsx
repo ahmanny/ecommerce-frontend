@@ -28,7 +28,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             {product.title}
           </h1>
           <div className="lg:flex items-center justify-between mt-2">
-            <div className=" capitalize md:uppercase border rounded-full px-3 py-1 text-xs md:text-sm truncate">
+            <div className=" capitalize md:uppercase border rounded-full py-1 text-xs md:text-sm">
               {product.stock_status}
             </div>
             <h1 className="text-sm md:text-lg font-bold text-[#5C5F6A]">

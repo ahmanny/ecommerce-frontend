@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import Link from "next/link";
+import CheckoutButton from "../../buttons/CheckoutButton";
 
 interface CartDrawerFooterProps {
   cartPriceTotal: number;
@@ -15,13 +16,11 @@ export default function CartDrawerFooter({
         <span>Total:</span>
         <span>${cartPriceTotal.toFixed(2)}</span>
       </div>
-      <div className="my-10 flex flex-col gap-10">
+      <div className="my-10 flex flex-col">
         <Link href={"/cart"}>
           <Button className="btn text-xl">View cart</Button>
         </Link>
-        <Link href={"/check-out"} className="text-center underline text-xl">
-          Checkout
-        </Link>
+        <CheckoutButton classes="text-center underline text-xl mt-3" />
       </div>
     </div>
   );
