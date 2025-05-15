@@ -17,7 +17,7 @@ export default function OrderActions({
       <button
         type="button"
         onClick={viewItem}
-        className="border border-[#0E1422] py-[6px] px-8 md:py-[12px] md:px-[24px] capitalize rounded-lg"
+        className="border border-[#0E1422] py-[6px] px-8 text-sm md:text-base md:py-[12px] md:px-[24px] capitalize rounded-lg"
       >
         view item
       </button>
