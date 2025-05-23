@@ -1,5 +1,6 @@
 "use client";
 import { useCartStore } from "@/store/CartStore";
+import { useUiStore } from "@/store/UiStore";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -11,11 +12,13 @@ interface CheckoutButtonProps {
 export default function CheckoutButton({ classes }: CheckoutButtonProps) {
   const [isLoading, setIsloading] = useState(false);
   const { items } = useCartStore();
+  const { setCartOpen } = useUiStore();
   const router = useRouter();
   const submitCart = () => {
     setIsloading(true);
     if (items.length > 0) {
       router.push("/check-out");
+      setCartOpen(false);
       setIsloading(false);
     } else {
       toast.error("Add items to your cart before proceeding to checkout");

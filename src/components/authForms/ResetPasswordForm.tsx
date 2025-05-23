@@ -7,6 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import InputField from "../ui/form/InputField";
 
 export default function ResetPasswordForm() {
   const searchParams = useSearchParams();
@@ -34,43 +35,30 @@ export default function ResetPasswordForm() {
   }
 
   return (
-    <div className=" w-[350px] py-24">
+    <div className="flex flex-col py-36 items-center gap-[30px]">
       <form
         onSubmit={handleSubmit(onsubmit)}
-        className="flex flex-col justify-center items-center  gap-6"
+        className="flex flex-col gap-[15px] w-[350px]"
       >
         {/* new password input */}
-        <div className="flex-col flex w-full">
-          <label htmlFor="new-password">New Password</label>
-          <input
-            id="new-password"
-            type="password"
-            {...register("newPassword")}
-            className="input"
-          />
-          {errors.newPassword?.message && (
-            <p className="text-red-500">{String(errors.newPassword.message)}</p>
-          )}
-        </div>
-
+        <InputField
+          name="newPassword"
+          label="New Password"
+          register={register}
+          errors={errors}
+        />
         {/* confirm password input */}
-        <div className="flex-col flex w-full">
-          <label htmlFor="confirm-password">Confirm Password</label>
-          <input
-            id="confirm-password"
-            type="password"
-            {...register("confirmPassword")}
-            className="input"
-          />
-          {errors.confirmPassword?.message && (
-            <p className="text-red-500">
-              {String(errors.confirmPassword.message)}
-            </p>
-          )}
-        </div>
-
+        <InputField
+          name="confirmPassword"
+          label="Confirm Password"
+          register={register}
+          errors={errors}
+        />
         {/* submit button */}
-        <button type="submit" className="btn mt-8">
+        <button
+          type="submit"
+          className="primary-p1 text-custom-50 h-[40px] w-full rounded-md mt-8"
+        >
           Reset Password
         </button>
       </form>

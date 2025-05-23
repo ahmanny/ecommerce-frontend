@@ -4,7 +4,7 @@ import React from "react";
 export default function page() {
   return (
     <div>
-      <h1 className="heading_2">Account Details</h1>
+      <h1 className="heading-h5 text-foreground-f1">Account Details</h1>
       <AccountDetail />
     </div>
   );

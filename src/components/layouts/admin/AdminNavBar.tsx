@@ -20,15 +20,15 @@ export default function AdminNavBar() {
     <div className=" flex flex-col items-center w-full py-10 ">
       <div className="flex">
         <FaCartPlus className=" text-3xl" />
-        <h1 className=" text-[#0E1422] font-extrabold text-[22px]">Admin</h1>
+        <h1 className=" text-foreground-f1 heading-h3">Admin</h1>
       </div>
       <div className=" w-full">
         <div className=" flex flex-col gap-16">
-          <div className="py-[70px]">
+          <div className="pt-[70px]">
             <Navs navs={adminDashBoardNavs} parentHref="/admin" />
           </div>
           <hr />
-          <button className="capitalize text-[#5C5F6A] flex h-[51px] w-[212px] mx-auto px-4 gap-2 hover:bg-[#F6F6F6] items-center rounded-md ">
+          <button className="capitalize text-[#5C5F6A] flex h-[51px] w-[212px] mx-auto px-4 gap-2 hover:bg-custom-10 dark:hover:bg-custom-200 items-center rounded-md ">
             <span className=" text-2xl">
               <FaPlus />
             </span>

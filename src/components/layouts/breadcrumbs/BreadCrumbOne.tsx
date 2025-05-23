@@ -14,7 +14,7 @@ export default function BreadCrumbOne() {
       <Breadcrumb.Root className="flex gap-1 items-center capitalize text-lg font-semibold">
         <Breadcrumb.List>
           <Breadcrumb.Item className="flex gap-1 text-[16px]">
-            <Breadcrumb.CurrentLink className="text-[#5C5F6A]">
+            <Breadcrumb.CurrentLink className="text-foreground-f5">
               {siteName}
             </Breadcrumb.CurrentLink>
           </Breadcrumb.Item>

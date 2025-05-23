@@ -25,10 +25,10 @@ export default function Navs({ navs, parentHref }: NavsProps) {
             setProfileNavOpen(false);
           }}
           href={`${parentHref}${nav.href}`}
-          className={` capitalize hover:bg-[#f6f6f6] items-center rounded-lg w-[212px] h-[51px] flex mx-auto px-4 gap-3 ${
+          className={` capitalize hover:bg-custom-10 dark:hover:bg-custom-500 items-center rounded-lg w-[212px] h-[51px] flex mx-auto px-4 gap-3 ${
             pathName.includes(nav.href)
-              ? "text-[#0E1422] bg-[#f6f6f6]"
-              : "text-[#5C5F6A]"
+              ? "text-[#0E1422] bg-custom-10 dark:bg-custom-200"
+              : "text-foreground-f5"
           }`}
         >
           <span className=" text-3xl">{nav.icon}</span>

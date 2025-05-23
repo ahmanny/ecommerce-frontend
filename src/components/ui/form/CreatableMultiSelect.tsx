@@ -33,7 +33,7 @@ export const CreatableMultiSelect: React.FC<Props> = ({
 
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor={name} className="label">
+      <label htmlFor={name} className="label-l2">
         {label}
       </label>
       <Controller

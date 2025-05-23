@@ -17,7 +17,7 @@ export default function BreadcrumbFour({
               <>
                 {index === 0 ? (
                   <Breadcrumb.Item className="breadcrump_item">
-                    <Breadcrumb.CurrentLink className="text-[#5C5F6A]">
+                    <Breadcrumb.CurrentLink className="text-foreground-f5">
                       {breadcrumbItem}
                     </Breadcrumb.CurrentLink>
                   </Breadcrumb.Item>

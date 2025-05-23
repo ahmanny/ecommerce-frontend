@@ -6,23 +6,22 @@ import Link from "next/link";
 import CartDrawer from "@/components/ui/drawers/CartDrawer";
 import ShopSearchBar from "@/components/search/ShopSearchBar";
 import AccountButton from "@/components/ui/buttons/AccountButton";
+import { ColorModeButton } from "@/components/ui/color-mode";
 // import SearchProducts from "@/components/searchBars/SearchProducts";
 
 export default function Header() {
   return (
-    <div className=" sticky top-0 z-40 bg-white h-[45px] pt-2  w-full ">
-      <div className=" px-6 lg:px-16 flex items-center justify-between">
+    <div className=" sticky top-0 z-40 h-[45px] pt-2 bg-background-b1  w-full ">
+      <div className=" px-4 lg:px-12 flex items-center justify-between">
         {/* Left: Logo */}
         <div className=" flex items-center">
           <div className="flex">
             <FaCartPlus className=" text-xl sm:text-3xl " />
-            <h1 className=" text-[#0E1422] font-bold text-[16px] sm:text-[22px]">
-              Ecommerce
-            </h1>
+            <h1 className="heading-h3 text-foreground-f1">Ecommerce</h1>
           </div>
         </div>
         {/* Center: Nav Links - Desktop */}
-        <div className="hidden lg:flex gap-5 ">
+        <div className="hidden lg:flex gap-5 body-p2 text-foreground-f5 ">
           <Link href={"/"}>Home</Link>
           <button className=" flex justify-center items-center gap-2 ">
             <p>Categories</p> <IoIosArrowDown className=" font-light mt-1" />
@@ -30,12 +29,13 @@ export default function Header() {
           <Link href={"/about"}>About</Link>
           <Link href={"/contact"}>Contact</Link>
         </div>
-        <div className=" flex justify-center items-center gap-7">
+        <div className=" flex justify-center items-center gap-6">
           {/* Center: Search Bar */}
           <ShopSearchBar />
           {/* Right: Icons */}
           <CartDrawer />
           <AccountButton />
+          <ColorModeButton />
         </div>
       </div>
     </div>

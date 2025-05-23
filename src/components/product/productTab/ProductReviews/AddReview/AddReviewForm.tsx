@@ -68,7 +68,7 @@ export default function AddReviewForm({ productId }: AddReviewFormProps) {
     <div>
       <form
         onSubmit={handleSubmit(submitChanges)}
-        className=" flex flex-col pt-8 gap-[40px] w-full text-[#474B57]"
+        className=" flex flex-col pt-8 gap-[40px] w-full"
       >
         <Dialog.Body>
           <div className="flex flex-col gap-[18px]">
@@ -117,7 +117,11 @@ export default function AddReviewForm({ productId }: AddReviewFormProps) {
                 {String(errors.rating?.message)}
               </p>
             )}
-            <button type="submit" className="btn mt-5">
+            <button
+              type="submit"
+              disabled={addReviewMuation.isPending}
+              className="btn mt-5 disabled:bg-opacity-50"
+            >
               {addReviewMuation.isPending ? (
                 <BeatLoader color="#3498db" />
               ) : (

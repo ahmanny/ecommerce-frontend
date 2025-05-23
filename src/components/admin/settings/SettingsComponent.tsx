@@ -1,5 +1,7 @@
 "use client";
 
+import InputField from "@/components/ui/form/InputField";
+import NumberInput from "@/components/ui/form/NumberInput";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -15,49 +17,38 @@ export default function SettingsComponent() {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({ resolver: zodResolver(settingsFormSchema) });
 
   function submitChanges(data: any) {
     console.log(data);
+    reset();
   }
   return (
     <div>
       <form
         onSubmit={handleSubmit(submitChanges)}
-        className=" flex flex-col gap-[45px] w-[320px] text-[#474B57]"
+        className=" flex flex-col gap-[45px] w-[320px] text-foreground-f5"
       >
         <div className="flex flex-col gap-[18px]">
-          <div className=" flex-col flex ">
-            <label htmlFor="name" className="font-medium">
-              Site Name
-            </label>
-            <input {...register("siteName")} id="name" className=" input" />
-            {errors?.siteName && (
-              <p className="text-red-500">{String(errors.siteName.message)}</p>
-            )}
-          </div>
-          <div className=" flex-col flex ">
-            <label htmlFor="email">Support Email</label>
-            <input
-              {...register("supportEmail")}
-              id="email"
-              className=" input"
-            />
-            {errors?.supportEmail && (
-              <p className="text-red-500">
-                {String(errors.supportEmail.message)}
-              </p>
-            )}
-          </div>
-          <div className=" flex-col flex ">
-            <label htmlFor="goal">Monthly Order Goal</label>
-            <input {...register("monthlyGoal")} id="goal" className=" input" />
-            {errors?.monthlyGoal && (
-              <p className="text-red-500">
-                {String(errors.monthlyGoal.message)}
-              </p>
-            )}
-          </div>
+          <InputField
+            name="siteName"
+            label="Site Name"
+            errors={errors}
+            register={register}
+          />
+          <InputField
+            name="supportEmail"
+            label="Support Email"
+            errors={errors}
+            register={register}
+          />
+          <NumberInput
+            name="monthlyGoal"
+            label="Monthly Order Goal"
+            errors={errors}
+            register={register}
+          />
         </div>
         <button type="submit" className="btn !w-1/2">
           Save Changes

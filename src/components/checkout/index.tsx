@@ -46,7 +46,7 @@ export default function CheckOut() {
     0
   );
   const tax = subtotal * 0.05;
-  const total = subtotal + tax;
+  const total = subtotal ;
   // ✅ Prefill form when user data is available
   useEffect(() => {
     if (user) {
@@ -91,7 +91,9 @@ export default function CheckOut() {
         >
           {/* Left: Shipping form */}
           <div className="lg:w-[600px]">
-            <h3 className="sub_heading_2 h-12 px-10">Shipping Address</h3>
+            <h3 className="heading-h4 text-foreground-f1 h-12 px-10">
+              Shipping Address
+            </h3>
             <hr />
             <div className=" py-16 px-10">
               <ShippingForm register={register} errors={errors} />

@@ -127,7 +127,11 @@ export default function ProductOptions({
           />
         </div>
         <div className="flex gap-5 justify-center">
-          <button type="submit" className="btn">
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="btn disabled:opacity-50"
+          >
             {isLoading ? <BeatLoader color="#3498db" /> : " Add to cart"}
           </button>
           {isLoggedIn && <AddToWishListButton productId={productId} />}

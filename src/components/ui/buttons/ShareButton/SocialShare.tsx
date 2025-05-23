@@ -55,7 +55,7 @@ export default function SocialShare({
 
   return (
     <div>
-      <h1 className="text-xl font-semibold">Share</h1>
+      <h1 className="heading-h4">Share</h1>
       <div>
         {SocialShareUrls.map((nav, index) => (
           <a

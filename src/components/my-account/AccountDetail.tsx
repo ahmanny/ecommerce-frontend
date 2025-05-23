@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
+import InputField from "../ui/form/InputField";
 
 const accountDetailSchema = z.object({
   name: z.string().min(3, "Enter your full name"),
@@ -54,29 +55,25 @@ export default function AccountDetail() {
     <div>
       <form
         onSubmit={handleSubmit(submitChanges)}
-        className=" flex flex-col py-14 gap-[45px] w-[320px] text-[#474B57]"
+        className=" flex flex-col py-14 gap-[35px] w-[320px] "
       >
         <Avatar.Root size={"2xl"}>
           <Avatar.Fallback name={user?.name} />
           <Avatar.Image src={user?.profilePicture} />
         </Avatar.Root>
         <div className="flex flex-col gap-[18px]">
-          <div className=" flex-col flex ">
-            <label htmlFor="name" className="font-medium">
-              Full Name
-            </label>
-            <input {...register("name")} id="name" className=" input" />
-            {errors?.name && (
-              <p className="text-red-500">{String(errors.name.message)}</p>
-            )}
-          </div>
-          <div className=" flex-col flex ">
-            <label htmlFor="email">Email</label>
-            <input {...register("email")} id="email" className=" input" />
-            {errors?.email && (
-              <p className="text-red-500">{String(errors.email.message)}</p>
-            )}
-          </div>
+          <InputField
+            label="Full Name"
+            name="name"
+            register={register}
+            errors={errors}
+          />
+          <InputField
+            label="Email"
+            name="email"
+            register={register}
+            errors={errors}
+          />
         </div>
         <button type="submit" className="btn !w-1/2">
           Save Changes

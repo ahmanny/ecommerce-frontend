@@ -1,77 +1,73 @@
+"use client";
+
+import { useFetchAdminDashboardStats } from "@/services/admin/adminQueries";
 import BestSelling from "./BestSelling";
 import RecentOrders from "./RecentOrders";
 import StatCard from "./StatCard";
-const customersData = [
-  { name: "D1", value: 10 },
-  { name: "D2", value: 70 },
-  { name: "D3", value: 74 },
-  { name: "D4", value: 719 },
-  { name: "D5", value: 702 },
-  { name: "D6", value: 30 },
-  { name: "D7", value: 70 },
-  { name: "D8", value: 10 },
-  { name: "D9", value: 120 },
-  { name: "D10", value: 105 },
-  { name: "D11", value: 35 },
-  { name: "D12", value: 1 },
-  { name: "D13", value: 320 },
-  { name: "D14", value: 38 },
-  { name: "D15", value: 60 },
-  { name: "D16", value: 70 },
-  { name: "D17", value: 320 },
-  { name: "D18", value: 30 },
-  { name: "D19", value: 31 },
-  { name: "D20", value: 90 },
-  { name: "D21", value: 100 },
-  { name: "D22", value: 300 },
-  { name: "D23", value: 12 },
-  { name: "D24", value: 19 },
-  { name: "D25", value: 30 },
-  { name: "D26", value: 9 },
-  { name: "D27", value: 50 },
-  { name: "D28", value: 60 },
-  { name: "D29", value: 70 },
-  { name: "D30", value: 10 },
-];
+import { transFormOrderData } from "@/lib/utils/order.utils";
+import { useEffect, useState } from "react";
+import { OrderI } from "@/types/orders.types";
+import PageSkeleton from "@/components/ui/loaders/skeletons/PageSkeleton";
+import { calculateTotal } from "@/lib/utils/ex.utils";
+
 export default function AdminDashBoard() {
+  const { data, isLoading } = useFetchAdminDashboardStats();
+  const [recentOrders, setRecentOrders] = useState<OrderI[]>([]);
+  // const [recentOrders, setRecentOrders] = useState<OrderI[]>([]);
+
+  useEffect(() => {
+    if (!isLoading && data?.recentOrders) {
+      setRecentOrders(transFormOrderData(data?.recentOrders));
+    }
+  }, [data]);
+
   const goals = 1000;
+  if (isLoading) return <PageSkeleton />;
   return (
-    <>
-      <div className="grid grid-cols-3 gap-20 w-[87%]">
-        <div className="">
-          <StatCard
-            title="Total sales"
-            value="$4,235"
-            subtitle="this month"
-            chartType="line"
-            data={customersData}
+    <div className="px-4 md:px-8 py-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        <StatCard
+          title="Total sales"
+          total={`$${calculateTotal(data?.dailySales || [])}`}
+          subtitle="this month"
+          chartType="line"
+          data={data?.dailySales?.map((item: any) => ({
+            date: item.date,
+            value: item.total,
+          }))}
+        />
+        <StatCard
+          title="customers"
+          total={`${calculateTotal(data?.dailyCustomers || [])}`}
+          subtitle="this month"
+          chartType="bar"
+          data={data?.dailyCustomers?.map((item: any) => ({
+            date: item.date,
+            value: item.total,
+          }))}
+        />
+        <StatCard
+          title="orders"
+          total="734"
+          subtitle={`monthly goals : ${goals}`}
+          chartType="progress"
+          goal={goals}
+        />
+      </div>
+      <div className=" grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
+        <div className="col-span-1">
+          <BestSelling
+            totalSales={`$${data?.bestSelling?.totalSales}`}
+            data={data?.bestSelling?.productSales?.map((item: any) => ({
+              name: item.title,
+              value: item.totalRevenue,
+            }))}
           />
         </div>
-        <div className="">
-          <StatCard
-            title="customers"
-            value="2,571"
-            subtitle="this month"
-            chartType="bar"
-            data={customersData}
-          />
-        </div>
-        <div className="">
-          <StatCard
-            title="orders"
-            value="734"
-            subtitle={`monthly goals : ${goals}`}
-            chartType="progress"
-            goal={goals}
-          />
-        </div>
-        <div>
-          <BestSelling />
-        </div>
-        <div className="col-span-2 h-full">
-          <RecentOrders />
+        <div className="col-span-2">
+          <RecentOrders order={recentOrders} />
         </div>
       </div>
-    </>
+    </div>
   );
 }

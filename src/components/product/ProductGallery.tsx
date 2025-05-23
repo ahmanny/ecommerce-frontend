@@ -19,7 +19,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
   };
 
   return (
-    <div className="bg-[#f6f6f6] rounded-md py-4 px-2">
+    <div className="bg-background-b2 rounded-md py-4 px-2">
       <div
         className="flex flex-col items-center justify-center gap-4 relative"
         onMouseEnter={() => setShowArrows(true)}
@@ -36,7 +36,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
           {showArrows && currentImage > 0 && (
             <button
               onClick={prevImage}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full"
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-background-b1 shadow p-2 rounded-full"
             >
               <IoIosArrowBack className="text-2xl md:text-3xl" />
             </button>
@@ -44,7 +44,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
           {showArrows && currentImage < images.length - 1 && (
             <button
               onClick={nextImage}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white shadow p-2 rounded-full"
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-background-b1 shadow p-2 rounded-full"
             >
               <IoIosArrowForward className="text-2xl md:text-3xl" />
             </button>

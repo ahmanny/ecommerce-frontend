@@ -32,7 +32,7 @@ export default function ProductReviewCard({
             <h1 className="date uppercase">{date}</h1>
           </div>
           <div className="w-full flex justify-between items-center">
-            <p className="text-[#5C5F6A] text-base">{comment}</p>
+            <p className="text-foreground-f5 text-base">{comment}</p>
             <Rating value={rating} readOnly />
           </div>
         </div>

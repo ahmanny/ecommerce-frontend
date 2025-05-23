@@ -70,7 +70,7 @@ export default function SignupForm() {
         <div>
           <button
             type="submit"
-            className=" bg-black text-white w-[350px] h-[43px] rounded-md"
+            className="primary-p1 text-custom-50 h-[40px] w-full rounded-md"
           >
             {signupMutation.isPending ? (
               <BeatLoader color="#3498db" />

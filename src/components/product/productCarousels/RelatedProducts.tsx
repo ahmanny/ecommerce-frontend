@@ -22,8 +22,10 @@ export default function RelatedProducts({ productId }: RelatedProductsProps) {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="heading">You might also like</h1>
-        <h2 className="sub_heading">SIMILAR PRODUCTS</h2>
+        <h1 className="heading-h3 text-foreground-f1">You might also like</h1>
+        <h2 className="label-l2 text-foreground-f7 uppercase">
+          SIMILAR PRODUCTS
+        </h2>
       </div>
       <div>
         <ProductCarousel

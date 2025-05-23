@@ -246,7 +246,7 @@ export default function ProductForm({ btnText }: formProps) {
                 {imageFiles.map((file, index) => (
                   <div
                     key={index}
-                    className="relative w-14  h-14 p-3  bg-[#F6F6F6] flex items-center justify-center rounded-md"
+                    className="relative w-14  h-14 p-3  bg-background-b2 flex items-center justify-center rounded-md"
                   >
                     <img
                       src={URL.createObjectURL(file)}
@@ -255,7 +255,7 @@ export default function ProductForm({ btnText }: formProps) {
                     />
                     <button
                       onClick={() => removeImage(index)}
-                      className="absolute top-[-13px] right-[-13px] bg-[#f6f6f6] text-black rounded-full w-5 h-5 flex items-center justify-center text-xs"
+                      className="absolute top-[-13px] right-[-13px] bg-background-b2 text-black rounded-full w-5 h-5 flex items-center justify-center text-xs"
                     >
                       <AiOutlineClose />
                     </button>

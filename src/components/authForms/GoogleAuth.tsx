@@ -17,7 +17,7 @@ export default function GoogleAuth() {
       </div>
       <div className=" flex items-center justify-between w-full">
         <div className=" border-b-[1px] border-gray-300  w-[140px]"></div>
-        <div className=" text-gray-800">OR</div>
+        <div className=" text-foreground-f8">OR</div>
         <div className=" border-b-[1px] border-gray-300  w-[140px]"></div>
       </div>
     </div>

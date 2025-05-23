@@ -58,10 +58,10 @@ export default function DataTables({
     (currentPage + 1) * itemsPerPage
   );
   return (
-    <div className="bg-white h-fit flex justify-between  flex-col p-5 ">
+    <div className="bg-background-b1 h-fit flex justify-between  flex-col py-5 ">
       <div>
         <div className="flex p-5 px-16 justify-between items-center">
-          <h1 className=" text-[#0E1422] text-[18px] capitalize">
+          <h1 className=" text-foreground-f1 heading-h4 capitalize">
             {componentFor}
           </h1>
           <div className=" flex gap-4">
@@ -71,7 +71,7 @@ export default function DataTables({
                 <button
                   onClick={addBtnAction}
                   type="submit"
-                  className="btn text-base !h-[35px]"
+                  className="text-base h-[35px] primary-p1 text-custom-50  w-full rounded-md"
                 >
                   {addBtnText}
                 </button>
@@ -114,56 +114,56 @@ export default function DataTables({
             )}
           </div>
         </div>
-        <Table.Root size="lg" className="text-[#5C5F6A] h-[95%]">
-          <Table.Header>
-            <Table.Row className="border-y-[0.1px] border-solid py-10 border-neutral-300">
-              <Table.ColumnHeader></Table.ColumnHeader>
-              <Table.ColumnHeader className="text-[#5C5F6A] text-[24px]">
-                <BiSortAlt2 />
-              </Table.ColumnHeader>
-              {tableHeaders.map((header, index) => (
-                <Table.ColumnHeader
-                  key={index}
-                  className="text-[#5C5F6A] text-[16px] capitalize"
-                >
-                  {header}
-                </Table.ColumnHeader>
-              ))}
-              <Table.ColumnHeader>Action</Table.ColumnHeader>
-            </Table.Row>
-          </Table.Header>
-
-          <Table.Body className=" capitalize">
-            {paginatedData.length === 0 ? (
-              <Table.Row>
-                <Table.Cell
-                  colSpan={tableHeaders.length + 2}
-                  className="text-center"
-                >
-                  No data available
-                </Table.Cell>
-              </Table.Row>
-            ) : (
-              paginatedData.map((item, index) => (
-                <Table.Row key={index}>
-                  {componentFor === "products" && isProduct(item) && (
-                    <ProductsRowsItem item={item} /> // Using ProductsRow component for products
-                  )}
-                  {componentFor === "orders" && isOrder(item) && (
-                    <OrdersRowsItem item={item} />
-                  )}
-                  {componentFor === "customers" && isCustomer(item) && (
-                    <CustomersRowsItem item={item} />
-                  )}
-                  {componentFor === "reviews" && isReview(item) && (
-                    <ReviewsRowsItem item={item} />
-                  )}
-                </Table.Row>
-              ))
-            )}
-          </Table.Body>
-        </Table.Root>
       </div>
+      <Table.Root size="lg" bg={"inherit"}>
+        <Table.Header>
+          <Table.Row className="border-y-[0.1px] border-solid py-10 border-neutral-300 bg-inherit">
+            <Table.ColumnHeader></Table.ColumnHeader>
+            <Table.ColumnHeader className="text-foreground-f5 text-[24px]">
+              <BiSortAlt2 />
+            </Table.ColumnHeader>
+            {tableHeaders.map((header, index) => (
+              <Table.ColumnHeader
+                key={index}
+                className="text-foreground-f5 text-[16px] capitalize"
+              >
+                {header}
+              </Table.ColumnHeader>
+            ))}
+            <Table.ColumnHeader>Action</Table.ColumnHeader>
+          </Table.Row>
+        </Table.Header>
+
+        <Table.Body className=" capitalize bg-inherit">
+          {paginatedData.length === 0 ? (
+            <Table.Row className="bg-inherit">
+              <Table.Cell
+                colSpan={tableHeaders.length + 2}
+                className="text-center"
+              >
+                No data available
+              </Table.Cell>
+            </Table.Row>
+          ) : (
+            paginatedData.map((item, index) => (
+              <Table.Row key={index} className="bg-inherit">
+                {componentFor === "products" && isProduct(item) && (
+                  <ProductsRowsItem item={item} /> // Using ProductsRow component for products
+                )}
+                {componentFor === "orders" && isOrder(item) && (
+                  <OrdersRowsItem item={item} />
+                )}
+                {componentFor === "customers" && isCustomer(item) && (
+                  <CustomersRowsItem item={item} />
+                )}
+                {componentFor === "reviews" && isReview(item) && (
+                  <ReviewsRowsItem item={item} />
+                )}
+              </Table.Row>
+            ))
+          )}
+        </Table.Body>
+      </Table.Root>
 
       {/* pagination for table  */}
       <Pagination

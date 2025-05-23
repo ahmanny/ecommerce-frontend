@@ -15,10 +15,10 @@ export default function ProductReviewsHeader({
 }: ProductReviewsHeaderProps) {
   return (
     <div className="w-full flex flex-col gap-6 pb-10">
-      <h1 className="heading_2">Reviews</h1>
+      <h1 className="heading-h5 text-foreground-f1">Reviews</h1>
       <div className="flex gap-4 items-center ">
-        <h1 className="font-extrabold text-xl">{rating}</h1>
-        <p className="text-[#5C5F6A]"> —{totalReviews} Reviews</p>
+        <h1 className="heading-h3">{rating}</h1>
+        <p className="text-foreground-f5"> —{totalReviews} Reviews</p>
       </div>
       <AddReview productId={productId} />
     </div>

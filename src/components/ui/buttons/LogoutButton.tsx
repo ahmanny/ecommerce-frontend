@@ -31,14 +31,14 @@ export default function LogoutButton({ iconOnly, routeTo }: LogoutButtonProps) {
     <div>
       <button
         onClick={handleLogout}
-        className="capitalize text-[#5C5F6A] flex  mx-auto px-5 py-2 gap-3 hover:bg-[#F6F6F6] items-center rounded-md "
+        className="capitalize text-custom-500 flex  mx-auto px-5 py-2 gap-3 hover:bg-custom-10 dark:hover:bg-custom-200 items-center rounded-md "
       >
         {logout.isPending ? (
           <SpinnerOne />
         ) : (
           <>
             <TbLogout className="text-3xl" />
-            {!iconOnly && <span className="text-[20px]">Logout</span>}
+            {!iconOnly && <span className="heading-h4">Logout</span>}
           </>
         )}
       </button>

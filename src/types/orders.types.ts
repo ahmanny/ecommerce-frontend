@@ -6,3 +6,12 @@ export interface AdminManagementIOrder {
     image?: string;
     status: string;
 }
+
+export interface OrderI {
+    title: string;
+    image: string;
+    price: string;
+    date: string;
+    orderStatus: string;
+    itemCount: number;
+}

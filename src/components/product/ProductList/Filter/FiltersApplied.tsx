@@ -45,7 +45,7 @@ export default function FiltersApplied() {
         {filters.length === 0 ? (
           <h3 className="text-lg font-bold">No filters applied yet...</h3>
         ) : (
-          <h3 className="sub_heading_2">Applied Filters:</h3>
+          <h3 className="heading-h4 text-foreground-f1">Applied Filters:</h3>
         )}
       </div>
       <div className="flex flex-wrap w-full max-w-full gap-3 overflow-hidden">

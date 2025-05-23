@@ -30,15 +30,15 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#F6F6F6] py-10">
+    <footer className="w-full bg-background-b2 py-10">
       <div className="mx-auto w-full px-4 flex flex-col md:flex-row md:justify-between md:items-start gap-10">
         {/* Logo & Social */}
         <div className="flex flex-col gap-6 w-full md:w-[250px]">
           <div className="flex items-center gap-2">
             <FaCartPlus className="text-3xl text-primary" />
-            <h1 className="text-[#0E1422] font-bold text-2xl">Ecommerce</h1>
+            <h1 className="text-foreground-f1 heading-h3">Ecommerce</h1>
           </div>
-          <p className="text-[#5C5F6A] text-sm">
+          <p className="text-foreground-f5 body-p1">
             DevCut is a YouTube channel for practical project-based learning.
           </p>
           <div className="flex gap-6">
@@ -52,14 +52,14 @@ export default function Footer() {
         <div className="flex flex-wrap gap-10">
           {footerLinks.map((section, index) => (
             <div key={index} className="flex flex-col gap-3 min-w-[120px]">
-              <h3 className="text-[#878A92] uppercase text-sm mb-2">
+              <h3 className="uppercase mb-2 body-p2 text-foreground-f7 ">
                 {section.title}
               </h3>
               {section.links.map((link, idx) => (
                 <Link
                   key={idx}
                   href={link.href}
-                  className="text-[#5C5F6A] hover:text-black text-sm"
+                  className="body-p2 text-foreground-f5 text-opacity-100 hover:text-opacity-80 "
                 >
                   {link.name}
                 </Link>
@@ -70,7 +70,7 @@ export default function Footer() {
 
         {/* Payment Methods */}
         <div className="flex flex-col gap-6">
-          <h3 className="text-[#878A92] uppercase text-sm">
+          <h3 className="body-p2 text-foreground-f7 uppercase ">
             Accepted Payments
           </h3>
           <div className="flex gap-4">

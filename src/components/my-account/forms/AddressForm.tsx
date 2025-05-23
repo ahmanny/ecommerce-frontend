@@ -1,5 +1,6 @@
 "use client";
 
+import InputField from "@/components/ui/form/InputField";
 import { useUpdateUser } from "@/services/users/usersQueries";
 import { useUserStore } from "@/store/UserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -69,51 +70,51 @@ export default function AddressForm() {
     });
   }
   return (
-    <form
-      onSubmit={handleSubmit(submitForm)}
-      className="space-y-14 py-14 w-[550px]"
-    >
+    <form onSubmit={handleSubmit(submitForm)} className="space-y-14 py-14">
       <div>
-        <div className=" flex flex-col gap-[15px] text-[#474B57]">
-          <div className=" flex-col flex ">
-            <label htmlFor="address">Street Address</label>
-            <input {...register("address")} id="address" className=" input" />
-            {errors.address?.message && (
-              <p className="text-red-500">{String(errors.address.message)}</p>
-            )}
-          </div>
+        <div className=" flex flex-col gap-[15px]">
+          <InputField
+            label="Street Address"
+            name="address"
+            register={register}
+            errors={errors}
+          />
           {/* city and state input */}
           <div className="flex gap-8 w-full">
             <div className=" flex-col flex w-1/2">
-              <label htmlFor="city">City</label>
-              <input {...register("city")} id="city" className=" input" />
-              {errors.city?.message && (
-                <p className="text-red-500">{String(errors.city.message)}</p>
-              )}
+              <InputField
+                label="City"
+                name="city"
+                register={register}
+                errors={errors}
+              />
             </div>
             <div className=" flex-col flex w-1/2">
-              <label htmlFor="state">State</label>
-              <input {...register("state")} id="state" className=" input" />
-              {errors.state?.message && (
-                <p className="text-red-500">{String(errors.state.message)}</p>
-              )}
+              <InputField
+                label="State"
+                name="state"
+                register={register}
+                errors={errors}
+              />
             </div>
           </div>
           {/* zip code and country input  */}
           <div className="flex gap-8 w-full ">
             <div className=" flex-col flex w-1/2">
-              <label htmlFor="zipCode">Zip Code</label>
-              <input {...register("zipCode")} id="zipCode" className=" input" />
-              {errors.zipCode?.message && (
-                <p className="text-red-500">{String(errors.zipCode.message)}</p>
-              )}
+              <InputField
+                label="Zip Code"
+                name="zipCode"
+                register={register}
+                errors={errors}
+              />
             </div>
             <div className=" flex-col flex w-1/2 ">
-              <label htmlFor="country">Country</label>
-              <input {...register("country")} id="country" className=" input" />
-              {errors.country?.message && (
-                <p className="text-red-500">{String(errors.country.message)}</p>
-              )}
+              <InputField
+                label="Country"
+                name="country"
+                register={register}
+                errors={errors}
+              />
             </div>
           </div>
         </div>

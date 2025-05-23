@@ -26,15 +26,11 @@ export const useFetchAllOrders = () => {
 }
 // fetch user's order
 export const useFetchUserOrders = () => {
-    const { data: orders, isLoading, isSuccess, isError, error, refetch } = useQuery({
+    return useQuery({
         queryKey: ["user-orders"],
-        queryFn: async () => {
-            const items = await getUserOrders()
-            return items
-        },
+        queryFn: getUserOrders,
         staleTime: 1000 * 60 * 60,
     })
-    return { orders, isLoading, isSuccess, error, isError, refetch }
 }
 
 // fetch a single order by ID

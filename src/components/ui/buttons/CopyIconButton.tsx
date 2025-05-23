@@ -22,9 +22,9 @@ export default function CopyIconButton({ text }: CopyIconButtonProps) {
       <Clipboard.Trigger asChild>
         <Button variant="surface" size="xl">
           {status ? (
-            <MdCheck className="text-[#5C5F6A]" />
+            <MdCheck className="text-foreground-f5" />
           ) : (
-            <RiFileCopy2Line className="text-[#5C5F6A]" />
+            <RiFileCopy2Line className="text-foreground-f5" />
           )}
         </Button>
       </Clipboard.Trigger>

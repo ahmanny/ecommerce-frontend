@@ -16,7 +16,7 @@ export default function CartContainer() {
         <div className="flex flex-col md:flex-row py-4 md:py-14 justify-between ">
           {/* Left: items in cart */}
           <div className="md:w-[550px] lg:w-[600px]">
-            <h3 className="sub_heading_2 h-12 px-10">Your Cart</h3>
+            <h3 className="heading-h4 text-foreground-f1 h-12 px-10">Your Cart</h3>
             <div className="px-4 md:px-10">
               {items.map((item) => (
                 <CartItem key={item.uniqueId} item={item} />

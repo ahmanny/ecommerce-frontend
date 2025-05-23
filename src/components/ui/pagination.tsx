@@ -27,7 +27,7 @@ const Pagination: React.FC<PaginationProps> = ({ pageCount, onPageChange }) => {
         pageRangeDisplayed={1}
         onPageChange={(event) => onPageChange(event.selected)}
         containerClassName="pagination flex gap-4 justify-center items-center"
-        activeClassName="active bg-[#F6F6F6] px-3 rounded-md py-1"
+        activeClassName="active bg-background-b2 px-3 text-foreground-f5 rounded-md py-1"
       />
     </Box>
   );

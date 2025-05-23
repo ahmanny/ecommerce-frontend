@@ -1,5 +1,6 @@
 "use client";
 
+import InputField from "@/components/ui/form/InputField";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -46,38 +47,26 @@ export default function ChangePasswordForm() {
     <div>
       <form
         onSubmit={handleSubmit(submitChanges)}
-        className=" flex flex-col py-14 gap-[45px] w-[320px] text-[#474B57]"
+        className=" flex flex-col py-14 gap-[45px] w-[320px] "
       >
         <div className="flex flex-col gap-[18px]">
           {/* new password input */}
           <div className="flex-col flex w-full">
-            <label htmlFor="new-password">New Password</label>
-            <input
-              id="new-password"
-              type="password"
-              {...register("newPassword")}
-              className="input"
+            <InputField
+              label="New Password"
+              name="newPassword"
+              register={register}
+              errors={errors}
             />
-            {errors.newPassword?.message && (
-              <p className="text-red-500">
-                {String(errors.newPassword.message)}
-              </p>
-            )}
           </div>
           {/* confirm password input */}
           <div className="flex-col flex w-full">
-            <label htmlFor="confirm-password">Confirm Password</label>
-            <input
-              id="confirm-password"
-              type="password"
-              {...register("confirmPassword")}
-              className="input"
+            <InputField
+              label="Confirm Password"
+              name="confirmPassword"
+              register={register}
+              errors={errors}
             />
-            {errors.confirmPassword?.message && (
-              <p className="text-red-500">
-                {String(errors.confirmPassword.message)}
-              </p>
-            )}
           </div>
         </div>
         {/* submit button */}

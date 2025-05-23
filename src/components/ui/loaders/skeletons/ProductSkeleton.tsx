@@ -3,9 +3,9 @@ import { Skeleton, SkeletonText } from "@chakra-ui/react";
 
 export default function ProductSkeleton() {
   return (
-    <div className="flex flex-col h-full p-4 justify-between rounded-lg w-full bg-white">
+    <div className="flex flex-col h-full p-4 justify-between rounded-lg w-full bg-background-b1">
       {/* Image Skeleton */}
-      <div className="w-full aspect-square bg-[#F6F6F6] rounded-lg flex justify-center items-center overflow-hidden">
+      <div className="w-full aspect-square bg-background-b2 rounded-lg flex justify-center items-center overflow-hidden">
         <Skeleton height="100%" width="100%" />
       </div>
 

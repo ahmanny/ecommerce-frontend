@@ -19,8 +19,11 @@ import { useCartStore } from "@/store/CartStore";
 import { CloseButton } from "../../close-button";
 import CartDrawerItem from "./CartDrawerItem";
 import CartDrawerFooter from "./CartDrawerFooter";
+import EmptyState from "../../states/EmptyState";
+import { useRouter } from "next/navigation";
 
 export default function CartDrawer() {
+  const router = useRouter();
   const { isCartOpen, setCartOpen } = useUiStore();
   const { items } = useCartStore();
   const cartPriceTotal = items.reduce(
@@ -48,7 +51,7 @@ export default function CartDrawer() {
         <DrawerTrigger asChild>
           <button className="relative">
             <BsCart4 className=" text-[18px] sm:text-[22px]" />
-            <p className="absolute top-[-13px] right-[-13px] bg-blue-500 rounded-full w-5 h-5 flex items-center justify-center text-sm">
+            <p className="absolute top-[-11px] right-[-13px] bg-blue-500 rounded-full w-5 h-5 flex items-center justify-center text-sm">
               {items.length}
             </p>
           </button>
@@ -84,7 +87,12 @@ export default function CartDrawer() {
                       </div>
                     ))
                   ) : (
-                    <p className="text-gray-500">Your cart is empty.</p>
+                    <EmptyState
+                      message="Your cart is empty."
+                      subtitle="Click 'Start shopping' to add items to your cart"
+                      btnText="Start Shopping"
+                      action={() => router.push("/products/search")}
+                    />
                   )}
                 </div>
               </DrawerBody>

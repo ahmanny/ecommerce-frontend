@@ -26,7 +26,7 @@ export function middleware(req: NextRequest) {
         return NextResponse.redirect(new URL(`/auth/login?callbackUrl=${callbackUrl}`, req.url));
     }
 
-    // Reset password protection
+    // // Reset password protection
     if (url.pathname.startsWith("/auth/reset-password")) {
         const resetToken = url.searchParams.get("token");
         if (!resetToken) {

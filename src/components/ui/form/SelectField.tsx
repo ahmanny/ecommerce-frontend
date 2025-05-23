@@ -19,7 +19,7 @@ export default function SelectField({
     <div>
       {/* category input/dropdown */}
       <div className=" flex-col flex ">
-        <label htmlFor={label} className="label">
+        <label htmlFor={label} className="label-l2">
           {label}
         </label>
         <select

@@ -35,12 +35,12 @@ export default function AdminLoginForm() {
     <div className="flex flex-col justify-center items-center py-24 gap-[30px] min-h-screen">
       <div className="flex">
         <FaCartPlus className=" text-3xl" />
-        <h1 className=" text-[#0E1422] font-bold text-[22px]">Admin</h1>
+        <h1 className=" text-foreground-f1 heading-h3">Admin</h1>
       </div>
       {/* login form */}
       <form
         onSubmit={handleSubmit(submitForm)}
-        className=" flex flex-col gap-[15px] w-[320px] text-[#474B57]"
+        className=" flex flex-col gap-[15px] w-[320px]"
       >
         <InputField
           name="email"
@@ -54,7 +54,10 @@ export default function AdminLoginForm() {
           register={register}
           errors={errors}
         />
-        <button type="submit" className="btn">
+        <button
+          type="submit"
+          className="primary-p1 text-custom-50 h-[40px] w-full rounded-md"
+        >
           {loginMutation.isPending ? <BeatLoader color="#3498db" /> : "Login"}
         </button>
         {/* backend errors */}

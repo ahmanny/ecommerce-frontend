@@ -8,7 +8,7 @@ export default function ShopLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div>
-      <div className="container mx-auto">
+      <div className=" container mx-auto">
         <NotificationBar />
         <Header />
         <div>{children}</div>

@@ -16,7 +16,7 @@ export default function TextAreaFileld({
 }: TextAreaFileldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={label} className="label">
+      <label htmlFor={label} className="label-l2">
         {label}
       </label>
       <Textarea

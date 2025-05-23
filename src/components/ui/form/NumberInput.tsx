@@ -16,7 +16,7 @@ export default function NumberInput({
 }: NumberInputProps) {
   return (
     <div className=" flex-col flex ">
-      <label htmlFor={name} className="label">
+      <label htmlFor={name} className="label-l2">
         {label}
       </label>
       <input type="number" {...register(name)} id="price" className=" input" />

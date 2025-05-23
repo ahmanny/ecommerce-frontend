@@ -33,12 +33,12 @@ export default function ShareButton({
           borderRadius={"md"}
           _hover={{ bg: "gray.100" }}
         >
-          <FaShareAlt className="text-[#5C5F6A]" />
+          <FaShareAlt className="text-foreground-f5" />
         </Button>
       </Popover.Trigger>
       <Portal>
         <Popover.Positioner>
-          <Popover.Content w={"380px"}>
+          <Popover.Content w={"350px"}>
             <Popover.Arrow />
             <Popover.Body>
               <div className="p-3 flex flex-col gap-4">

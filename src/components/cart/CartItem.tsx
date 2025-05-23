@@ -85,7 +85,7 @@ export default function CartItem({ item }: CartItemProps) {
       {/* Remove Button */}
       <button
         onClick={deleteCart}
-        className="ml-4 text-gray-500 hover:text-red-500 bg-[#f6f6f6] p-1 rounded-md"
+        className="ml-4 text-gray-500 hover:text-red-500 bg-background-b2 p-1 rounded-md"
       >
         <FiX size={24} />
       </button>

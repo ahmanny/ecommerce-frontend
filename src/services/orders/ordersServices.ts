@@ -18,19 +18,7 @@ export const getAllOrders = async () => {
 // fetch  user orders
 export const getUserOrders = async () => {
     const { data } = await API.get("/order/get-user-orders");
-    // Transforming data to match the `item` interface
-    const transformedItems = data.userOrders.orders.flatMap((order: any) =>
-        order.items.map((item: any) => ({
-            title: item.productId.title, // Item title from the product data
-            image: item.productId.images[0], // Assuming images[0] is the main image
-            price: order.summary.total, // order price total
-            color: item.color, // Color (optional)
-            size: item.size, // Size (optional)
-            date: formatDate(order.createdAt), // Order creation date
-            orderStatus: order.order_status, // Optional: order status
-        }))
-    );
-    return transformedItems
+    return data.userOrders
 }
 
 // fetch  user orders

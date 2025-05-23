@@ -9,7 +9,7 @@ export default function MainLayout({
   return (
     <div>
       <div className="">
-        <div className="py-4 bg-[#F6F6F6]  h-[140px] flex flex-col justify-center items-center">
+        <div className="py-4 bg-background-b2  h-[140px] flex flex-col justify-center items-center">
           <BreadCrumbOne />
         </div>
         <div className=" w-full py-[60px]">

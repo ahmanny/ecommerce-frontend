@@ -23,7 +23,7 @@ export default function ForgottenPasswordForm() {
   return (
     <div className="flex flex-col py-36 items-center gap-[30px]">
       <div className=" w-[350px]">
-        <p className=" text-sm mb-6">
+        <p className=" body-p1 mb-6">
           Please enter the email address associated with your account. We'll
           promptly send you a link to reset your password.
         </p>
@@ -37,7 +37,10 @@ export default function ForgottenPasswordForm() {
             />
           </div>
           <div>
-            <button type="submit" className="btn">
+            <button
+              type="submit"
+              className="primary-p1 text-custom-50 h-[40px] w-full rounded-md"
+            >
               {forgottenPasswordMutation.isPending ? (
                 <BeatLoader color="#3498db" />
               ) : (

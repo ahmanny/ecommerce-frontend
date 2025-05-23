@@ -1,3 +1,5 @@
+import { OrderI } from "@/types/orders.types";
+
 const orders = [
   {
     productName: "Men's Black T-Shirts",
@@ -31,21 +33,25 @@ const orders = [
   },
 ];
 
-export default function RecentOrders() {
+export interface OrderProps {
+  order: OrderI[];
+}
+
+export default function RecentOrders({ order }: OrderProps) {
   return (
-    <div className="p-6 py-10 pb-24 bg-white rounded-lg ">
+    <div className="sm:px-3 md:px-6 py-10 pb-24 bg-background-b1 rounded-lg ">
       {/* Header Section */}
       <div className="flex gap-4 items-center mb-4">
         <h1 className="text-lg font-semibold">Recent Orders</h1>
-        <button className="px-4 py-2 text-sm bg-gray-100 rounded-full">
+        <button className="px-4 py-2 text-sm bg-background-b2 rounded-full">
           View All
         </button>
       </div>
 
       {/* Table */}
-      <div className="border border-gray-100 rounded-lg overflow-hidden">
+      <div className="border border-custom-10 dark:border-custom-600 rounded-lg overflow-hidden">
         {/* Table Header */}
-        <div className="grid grid-cols-5  font-semibold py-3 px-4 border-b text-[#5C5F6A]">
+        <div className="grid grid-cols-5  font-semibold py-3 px-4 border-b text-foreground-f5">
           <p className="col-span-2">Item</p>
           <p>Date</p>
           <p>Total</p>
@@ -53,15 +59,15 @@ export default function RecentOrders() {
         </div>
 
         {/* Table Rows */}
-        {orders.map((order, index) => (
+        {order.map((item, index) => (
           <div
             key={index}
-            className="grid grid-cols-5 py-3 px-4  border-b items-center text-[#5C5F6A]"
+            className="grid grid-cols-5 py-3 px-4  border-b items-center text-foreground-f5 text-[7px] sm:text-sm "
           >
-            <p className="col-span-2 capitalize">{order.productName}</p>
-            <p className=" capitalize">{order.date}</p>
-            <p className=" capitalize">{order.total}</p>
-            <p className={`font-medium  capitalize`}>{order.status}</p>
+            <p className="col-span-2 capitalize">{item.title}</p>
+            <p className=" capitalize">{item.date}</p>
+            <p className=" capitalize">{item.price}</p>
+            <p className={`font-medium  capitalize`}>{item.orderStatus}</p>
           </div>
         ))}
       </div>

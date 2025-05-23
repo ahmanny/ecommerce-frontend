@@ -38,12 +38,12 @@ export default function Summary({ submitBtnText, isLoading }: SummaryProps) {
       {submitBtnText ? (
         <button
           type="submit"
-          className="w-full bg-black text-white py-2 mt-8 rounded"
+          className="primary-p1 text-custom-50 h-[40px] w-full rounded"
         >
           {isLoading ? <BeatLoader color="#3498db" /> : submitBtnText}
         </button>
       ) : (
-        <CheckoutButton classes="bg-black text-white" />
+        <CheckoutButton classes="primary-p1 text-custom-50" />
       )}
     </div>
   );

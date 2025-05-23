@@ -270,7 +270,7 @@ export default function UpdateProduct({ product }: UpdateProductFormProps) {
                 {images?.map((image, index) => (
                   <div
                     key={index}
-                    className="relative w-14 h-14 p-3 bg-[#F6F6F6] flex items-center justify-center rounded-md"
+                    className="relative w-14 h-14 p-3 bg-background-b2 flex items-center justify-center rounded-md"
                   >
                     <img
                       src={image} // Use backend image URL
@@ -280,7 +280,7 @@ export default function UpdateProduct({ product }: UpdateProductFormProps) {
                     <button
                       type="button"
                       onClick={() => removeUploadedImage(index)}
-                      className="absolute top-[-13px] right-[-13px] bg-[#f6f6f6] text-black rounded-full w-5 h-5 flex items-center justify-center text-xs"
+                      className="absolute top-[-13px] right-[-13px] bg-background-b2 text-black rounded-full w-5 h-5 flex items-center justify-center text-xs"
                     >
                       <AiOutlineClose />
                     </button>
@@ -290,7 +290,7 @@ export default function UpdateProduct({ product }: UpdateProductFormProps) {
                 {newimageFiles.map((file, index) => (
                   <div
                     key={index}
-                    className="relative w-14  h-14 p-3  bg-[#F6F6F6] flex items-center justify-center rounded-md"
+                    className="relative w-14  h-14 p-3  bg-background-b2 flex items-center justify-center rounded-md"
                   >
                     <img
                       src={URL.createObjectURL(file)}
@@ -300,7 +300,7 @@ export default function UpdateProduct({ product }: UpdateProductFormProps) {
                     <button
                       type="button"
                       onClick={() => removeImage(index)}
-                      className="absolute top-[-13px] right-[-13px] bg-[#f6f6f6] text-black rounded-full w-5 h-5 flex items-center justify-center text-xs"
+                      className="absolute top-[-13px] right-[-13px] bg-background-b2 text-black rounded-full w-5 h-5 flex items-center justify-center text-xs"
                     >
                       <AiOutlineClose />
                     </button>
@@ -340,7 +340,10 @@ export default function UpdateProduct({ product }: UpdateProductFormProps) {
               {updateProductMutation.error.message}
             </p>
           )}
-          <button type="submit" className="btn !w-48">
+          <button
+            type="submit"
+            className="!w-48 primary-p1 text-custom-50 h-[40px] rounded-md"
+          >
             {updateProductMutation.isPending ? (
               <BeatLoader color="#3498db" />
             ) : (

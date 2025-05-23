@@ -62,7 +62,10 @@ export default function LoginForm() {
           </Link>
         </div>
         {/* submit form button */}
-        <button type="submit" className="btn">
+        <button
+          type="submit"
+          className="primary-p1 text-custom-50 h-[40px] w-full rounded-md"
+        >
           {loginMutation.isPending ? <BeatLoader color="#3498db" /> : "Login"}
         </button>
         {/* backend errors */}

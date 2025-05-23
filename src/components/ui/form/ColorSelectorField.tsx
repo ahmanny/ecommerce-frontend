@@ -19,7 +19,7 @@ export default function ColorSelectorField({
 }: ColorSelectorFieldProps) {
   return (
     <div>
-      <label className="label">{label}</label>
+      <label className="label-l2">{label}</label>
       <div className="flex gap-2 mt-1">
         {colors.map((color) => {
           const isSelected = selectedColors.includes(color);
