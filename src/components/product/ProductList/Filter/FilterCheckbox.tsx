@@ -12,7 +12,7 @@ export default function FilterCheckbox({
   label,
 }: FilterCheckboxProps) {
   return (
-    <div className="mb-6">
+    <div className="mb-6 text-foreground-f5">
       <h1 className="font-semibold mb-3">{label}</h1>
       <ul className="space-y-3">
         {items.map((item) => (
