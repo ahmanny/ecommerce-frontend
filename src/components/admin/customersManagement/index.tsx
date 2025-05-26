@@ -6,7 +6,7 @@ import DataTables from "../dataTable";
 
 export default function CustomersManagement() {
   return (
-    <div className="w-[80%] h-[800px] ">
+    <div>
       <DataTables
         tableHeaders={CustomersTableHeader}
         componentFor="customers"

@@ -39,9 +39,9 @@ export interface OrderProps {
 
 export default function RecentOrders({ order }: OrderProps) {
   return (
-    <div className="sm:px-3 md:px-6 py-10 pb-24 bg-background-b1 rounded-lg ">
+    <div className=" py-10 pb-24 bg-background-b1 rounded-lg ">
       {/* Header Section */}
-      <div className="flex gap-4 items-center mb-4">
+      <div className="flex gap-4 items-center mb-4 px-3 md:px-6">
         <h1 className="text-lg font-semibold">Recent Orders</h1>
         <button className="px-4 py-2 text-sm bg-background-b2 rounded-full">
           View All
@@ -49,7 +49,7 @@ export default function RecentOrders({ order }: OrderProps) {
       </div>
 
       {/* Table */}
-      <div className="border border-custom-10 dark:border-custom-600 rounded-lg overflow-hidden">
+      <div className="border border-custom-10 dark:border-custom-600  overflow-hidden">
         {/* Table Header */}
         <div className="grid grid-cols-5  font-semibold py-3 px-4 border-b text-foreground-f5">
           <p className="col-span-2">Item</p>

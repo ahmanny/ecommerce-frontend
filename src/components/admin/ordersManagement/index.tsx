@@ -4,7 +4,7 @@ import DataTables from "../dataTable";
 
 export default function OrdersManagement() {
   return (
-    <div className="w-[80%] h-[800px]">
+    <div className="">
       <DataTables
         tableHeaders={OrderTableHeader}
         componentFor="orders"

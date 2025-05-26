@@ -12,12 +12,12 @@ export default function AdminAppLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex bg-background-b2 justify-center w-full gap-[20px] lg:gap-[48px]">
+    <div className="flex bg-background-b2 justify-center">
       <div className="hidden md:block lg:w-[260px] bg-background-b1">
         <AdminNavBar />
       </div>
-      <div className=" flex-1 pt-5">
-        <div className=" h-[75px] flex justify-between items-center  pr-8">
+      <div className=" w-full pt-5 mx-auto md:mx-[20px] lg:mx-[48px]">
+        <div className=" h-[75px] flex justify-between items-center">
           <div>
             <div className="block md:hidden">
               <AdminNavDrawer />
@@ -29,7 +29,7 @@ export default function AdminAppLayout({
             <LogoutButton routeTo="/admin/login" iconOnly />
           </div>
         </div>
-        <div className=" py-16">{children}</div>
+        <div className="py-16">{children}</div>
       </div>
     </div>
   );

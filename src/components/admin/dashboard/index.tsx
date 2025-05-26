@@ -55,7 +55,7 @@ export default function AdminDashBoard() {
         />
       </div>
       <div className=" grid grid-cols-1 xl:grid-cols-3 gap-6 mt-8">
-        <div className="col-span-1">
+        <div className="xl:col-span-1">
           <BestSelling
             totalSales={`$${data?.bestSelling?.totalSales}`}
             data={data?.bestSelling?.productSales?.map((item: any) => ({
@@ -64,7 +64,7 @@ export default function AdminDashBoard() {
             }))}
           />
         </div>
-        <div className="col-span-2">
+        <div className="xl:col-span-2">
           <RecentOrders order={recentOrders} />
         </div>
       </div>

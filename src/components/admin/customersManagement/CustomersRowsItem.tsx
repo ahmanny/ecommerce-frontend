@@ -10,7 +10,6 @@ export default function CustomersRowsItem({
 }) {
   return (
     <>
-      <Table.Cell></Table.Cell>
       <Table.Cell>
         <Avatar.Root shape="rounded" size="lg" colorPalette={"blue"}>
           <Avatar.Fallback name={item.name} />

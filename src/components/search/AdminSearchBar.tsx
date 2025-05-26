@@ -26,7 +26,7 @@ export default function AdminSearchBar<T>({
 
   return (
     <div>
-      <div className="flex flex-col items-center relative w-[260px]">
+      <div className="flex flex-col items-center relative w-full">
         <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-2xl" />
         <input
           type="text"
