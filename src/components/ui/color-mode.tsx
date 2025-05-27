@@ -67,8 +67,8 @@ export const ColorModeButton = React.forwardRef<
         {...props}
         css={{
           _icon: {
-            width: "7",
-            height: "7",
+            width: "6",
+            height: "6",
           },
         }}
       >

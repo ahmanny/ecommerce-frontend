@@ -27,7 +27,15 @@ export const addProductSchema = z.object({
     .min(1, "Available quantity is required"),
   stock_status: z.string().min(1, "Stock status is required"),
   colors: z.array(z.string()).min(1, "At least one color must be selected"),
-  images: z.array(z.any()).min(1, "At least one image is required"),
+  images: z.array(z.any()),
+  newImages: z.array(z.any()).optional(),
   sizes: z.array(z.any()).min(1, "select a size"),
-});
+})
+  .refine(
+    (data) => data.images.length > 0 || (data.newImages?.length ?? 0) > 0,
+    {
+      message: "At least one image is required.",
+      path: ["images"],
+    }
+  );
 export type ProductFormData = z.infer<typeof addProductSchema>;

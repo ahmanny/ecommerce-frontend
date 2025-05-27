@@ -31,7 +31,7 @@ const isProduct = (item: any): item is IProduct =>
 const isOrder = (item: any): item is AdminManagementIOrder =>
   "order" in item && "date" in item;
 const isReview = (item: any): item is AdminManagementIReview =>
-  "review" in item && "name" in item;
+  "comment" in item && "name" in item;
 const isCustomer = (item: any): item is AdminManagementICustomer =>
   "email" in item && "shippingAddress" in item;
 
@@ -120,10 +120,7 @@ export default function DataTables({
       </div>
 
       <div className="mt-5">
-        <Table.ScrollArea
-          maxW={{ base: "sm", md: "2xl", lg: "100%" }}
-          overflowX={{ base: "auto", lg: "unset" }}
-        >
+        <Table.ScrollArea maxW="100%">
           <Table.Root size="sm" bg={"inherit"}>
             <Table.Header>
               <Table.Row className="border-y-[0.1px] border-solid py-10 border-neutral-300 bg-inherit">
@@ -139,7 +136,9 @@ export default function DataTables({
                     {header}
                   </Table.ColumnHeader>
                 ))}
-                <Table.ColumnHeader>Action</Table.ColumnHeader>
+                <Table.ColumnHeader className="flex justify-center">
+                  Action
+                </Table.ColumnHeader>
               </Table.Row>
             </Table.Header>
 

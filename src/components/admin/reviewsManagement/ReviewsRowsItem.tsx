@@ -1,9 +1,12 @@
 import { AdminManagementIReview } from "@/types/review.types";
-import { Avatar, Table } from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
 import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import { Avatar, Menu, Portal, Table } from "@chakra-ui/react";
 
-export default function ReviewsRowsItem({ item }: { item: AdminManagementIReview }) {
+export default function ReviewsRowsItem({
+  item,
+}: {
+  item: AdminManagementIReview;
+}) {
   return (
     <>
       <Table.Cell></Table.Cell>
@@ -13,12 +16,39 @@ export default function ReviewsRowsItem({ item }: { item: AdminManagementIReview
           <Avatar.Image src={item.image} />
         </Avatar.Root>
       </Table.Cell>
-      <Table.Cell>{item.name}</Table.Cell>
-      <Table.Cell>{item.comment}</Table.Cell>
       <Table.Cell>
-        <button>
-          <HiOutlineDotsHorizontal />
-        </button>
+        <div>{item.name}</div>
+      </Table.Cell>
+      <Table.Cell
+        minW={"250px"}
+        css={{
+          whiteSpace: "wrap" ,
+        }}
+      >
+        {item.comment}
+      </Table.Cell>
+      <Table.Cell className="flex items-center justify-center ">
+        <Menu.Root>
+          <Menu.Trigger asChild>
+            <button>
+              <HiOutlineDotsHorizontal />
+            </button>
+          </Menu.Trigger>
+          <Portal>
+            <Menu.Positioner>
+              <Menu.Content>
+                <Menu.Item value="edit">Edit</Menu.Item>
+                <Menu.Item
+                  value="delete"
+                  color="fg.error"
+                  _hover={{ bg: "bg.error", color: "fg.error" }}
+                >
+                  Delete...
+                </Menu.Item>
+              </Menu.Content>
+            </Menu.Positioner>
+          </Portal>
+        </Menu.Root>
       </Table.Cell>
     </>
   );

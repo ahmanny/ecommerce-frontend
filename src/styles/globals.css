@@ -48,7 +48,7 @@ body {
     @apply bg-custom-900 hover:bg-custom-700 transition text-custom-0 w-full h-[40px] flex justify-center items-center rounded-md;
   }
   .input {
-    @apply border-gray-200  border-solid p-2 w-full h-[37px] rounded-[5px] outline-none focus:border-blue-500 
+    @apply border-gray-200  border-solid p-2 w-full h-[35px] rounded-[5px] outline-none focus:border-blue-500 
     dark:border-custom-800 border dark:bg-[#1c1c1c] dark:focus:border-blue-700;
   }
   .breadcrump_item {

@@ -4,7 +4,7 @@ import { reviews, ReviewsTableHeader } from "@/lib/contants/regular.constants";
 import DataTables from "../dataTable";
 export default function ReviewsManagement() {
   return (
-    <div className="w-[80%] h-[800px] ">
+    <div className=" w-full h-full">
       <DataTables
         tableHeaders={ReviewsTableHeader}
         componentFor="reviews"

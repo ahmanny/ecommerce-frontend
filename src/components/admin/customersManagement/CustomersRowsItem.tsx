@@ -10,6 +10,7 @@ export default function CustomersRowsItem({
 }) {
   return (
     <>
+      <Table.Cell></Table.Cell>
       <Table.Cell>
         <Avatar.Root shape="rounded" size="lg" colorPalette={"blue"}>
           <Avatar.Fallback name={item.name} />
@@ -18,12 +19,19 @@ export default function CustomersRowsItem({
       </Table.Cell>
       <Table.Cell>{item.name}</Table.Cell>
       <Table.Cell>{item.email}</Table.Cell>
-      <Table.Cell>{item.shippingAddress.address}</Table.Cell>
-      <Table.Cell>
+      <Table.Cell
+        minW={"300px"}
+        css={{
+          whiteSpace: "wrap",
+        }}
+      >
+        {item.shippingAddress.address}
+      </Table.Cell>
+      <Table.Cell className="flex justify-center">
         <Menu.Root>
           <Menu.Trigger asChild>
             <button>
-              <HiOutlineDotsHorizontal />
+              <HiOutlineDotsHorizontal className="text-[15px] sm:text-[18px] lg:text-[24px]" />
             </button>
           </Menu.Trigger>
           <Portal>

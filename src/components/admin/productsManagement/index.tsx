@@ -19,7 +19,7 @@ export default function ProductsManagement() {
 
   return (
     <div>
-      <div className=" overflow-x-auto ">
+      <div className=" w-full h-full">
         <DataTables
           tableHeaders={ProductTableHeader}
           componentFor="products"

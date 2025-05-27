@@ -1,6 +1,6 @@
 "use client";
 
-import UpdateProduct from "@/components/admin/productsManagement/update/UpdateProduct";
+import UpdateProductForm from "@/components/admin/productsManagement/update/UpdateProductForm";
 import PageSkeleton from "@/components/ui/loaders/skeletons/PageSkeleton";
 import EmptyState from "@/components/ui/states/EmptyState";
 import ErrorState from "@/components/ui/states/ErrorState";
@@ -21,13 +21,15 @@ export default function page() {
     return <ErrorState message="Error loading product" onRetry={refetch} />;
   if (!product) return <EmptyState message="Product not found" />;
   return (
-    <div className="bg-white p-8 w-[85%]">
+    <div className="bg-background-b1 p-8 w-full h-full">
       {/* page heading */}
-      <div className=" pb-8 border-b-[1px] border-solid border-gray-200 mb-12">
-        <h1 className=" text-xl font-semibold capitalize">{product.title}</h1>
+      <div className=" pb-8 border-b-[1px] border-solid border-gray-300 mb-12">
+        <h1 className="  heading-h5 text-foreground-f3 capitalize">
+          {product.title}
+        </h1>
       </div>
       {/* edit product form */}
-      <UpdateProduct product={product} />
+      <UpdateProductForm product={product} />
     </div>
   );
 }

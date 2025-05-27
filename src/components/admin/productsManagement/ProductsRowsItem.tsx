@@ -30,12 +30,19 @@ export default function ProductsRowsItem({ item }: { item: IProduct }) {
           <Avatar.Image src={item.images[0]} />
         </Avatar.Root>
       </Table.Cell>
-      <Table.Cell>{item.title}</Table.Cell>
+      <Table.Cell
+        minW={"200px"}
+        css={{
+          whiteSpace: "wrap",
+        }}
+      >
+        {item.title}
+      </Table.Cell>
       <Table.Cell>{item.sku}</Table.Cell>
       <Table.Cell>{item.price}</Table.Cell>
       <Table.Cell>{item.stock_status}</Table.Cell>
       <Table.Cell>{item.gender}</Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="flex items-center justify-center">
         <Menu.Root>
           <Menu.Trigger asChild>
             <button>

@@ -87,7 +87,7 @@ export const reviews = [
     rating: 3,
     name: "Essential Neutrals",
     comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil autem minima officia, ",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil autem minima officia,so whats up man ",
     image: "/shirt4.png",
   },
   {
@@ -95,7 +95,7 @@ export const reviews = [
     rating: 3,
     name: "Essential Neutrals",
     comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil autem minima officia, ",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil autem minima officia, yo whats good ",
     image: "/shirt4.png",
   },
   {
@@ -103,7 +103,7 @@ export const reviews = [
     rating: 3,
     name: "Essential Neutrals",
     comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil autem minima officia, ",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil autem minima officia,hmmm usay ",
     image: "/shirt4.png",
   },
   {
@@ -111,7 +111,7 @@ export const reviews = [
     rating: 3,
     name: "Essential Neutrals",
     comment:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil autem minima officia, ",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil autem minima officia, minan hsh ",
     image: "/shirt4.png",
   }
 ];

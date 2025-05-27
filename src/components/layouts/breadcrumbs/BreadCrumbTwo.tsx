@@ -1,52 +1,56 @@
 "use client";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbList,
+  BreadcrumbRoot,
+  BreadcrumbCurrentLink,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMemo } from "react";
 
 export default function BreadCrumbTwo() {
-  // Get the current pathname
   const pathname = usePathname();
-  // get the different path segments availaible
-  const pathSegments = pathname.split("/").filter(Boolean);
+
+  const parts = useMemo(() => pathname.split("/").filter(Boolean), [pathname]);
+  const name = parts.at(-1)?.replace(/-/g, " ");
+
+  const pathSegments = useMemo(() => {
+    if (name === "edit") {
+      return parts.filter((_, i) => i !== 2); // remove slug
+    }
+    return parts;
+  }, [parts, name]);
 
   return (
-    <>
-      <Breadcrumb.Root className="flex gap-1 items-center capitalize text-lg font-semibold">
-        {pathSegments.map((segment, index) => {
-          // the url of each of the segments
-          const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
-          return (
-            // chakra ui bread crumb used with the segments
-            <Breadcrumb.List key={href}>
-              {index === pathSegments.length - 1 || index === 0 ? (
-                <>
-                  {index === 0 ? (
-                    <Breadcrumb.Item className="flex gap-1 text-[16px]">
-                      <Breadcrumb.CurrentLink className="text-[#5C5F6A]">
-                        {segment}
-                      </Breadcrumb.CurrentLink>
-                    </Breadcrumb.Item>
-                  ) : (
-                    <Breadcrumb.Item className="flex gap-1 text-[16px]">
-                      <Breadcrumb.CurrentLink>{segment}</Breadcrumb.CurrentLink>
-                    </Breadcrumb.Item>
-                  )}
-                  {index === 0 && <Breadcrumb.Separator className="text-lg" />}
-                </>
+    <BreadcrumbRoot className="flex gap-1 items-center capitalize ">
+      {pathSegments.map((segment, index) => {
+        const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
+        const isFirst = index === 0;
+        const isLast = index === pathSegments.length - 1;
+
+        return (
+          <BreadcrumbList key={href}>
+            <BreadcrumbItem className="flex gap-1 text-base md:text-[18px] font-semibold">
+              {isLast ? (
+                <BreadcrumbCurrentLink>{segment}</BreadcrumbCurrentLink>
+              ) : isFirst ? (
+                <BreadcrumbCurrentLink className="text-[#5C5F6A]">
+                  {segment}
+                </BreadcrumbCurrentLink>
               ) : (
-                <>
-                  <Breadcrumb.Item className="flex gap-1 text-[16px]">
-                    <BreadcrumbLink as={Link} href={href}>
-                      {segment}
-                    </BreadcrumbLink>
-                  </Breadcrumb.Item>
-                  <Breadcrumb.Separator className="text-lg" />
-                </>
+                <BreadcrumbLink as={Link} href={href}>
+                  {segment}
+                </BreadcrumbLink>
               )}
-            </Breadcrumb.List>
-          );
-        })}
-      </Breadcrumb.Root>
-    </>
+            </BreadcrumbItem>
+            {!isLast && <BreadcrumbSeparator className="text-lg" />}
+          </BreadcrumbList>
+        );
+      })}
+    </BreadcrumbRoot>
   );
 }

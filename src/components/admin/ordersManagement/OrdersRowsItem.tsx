@@ -11,18 +11,17 @@ export default function OrdersRowsItem({
   const router = useRouter();
   return (
     <>
-      <Table.Cell></Table.Cell>
-      <Table.Cell>
+      <Table.Cell className="flex items-center justify-center">
         <Avatar.Root shape="rounded" size="lg" colorPalette={"blue"}>
           <Avatar.Fallback name={item.order} />
           <Avatar.Image src={item.image} />
         </Avatar.Root>
       </Table.Cell>
-      <Table.Cell>{item.order}</Table.Cell>
-      <Table.Cell>{item.date}</Table.Cell>
-      <Table.Cell>{item.total}</Table.Cell>
-      <Table.Cell>{item.status}</Table.Cell>
-      <Table.Cell>
+      <Table.Cell minW={"170px"}>{item.order}</Table.Cell>
+      <Table.Cell minW={"100px"}>{item.date}</Table.Cell>
+      <Table.Cell minW={"50px"}>{item.total}</Table.Cell>
+      <Table.Cell minW={"90px"}>{item.status}</Table.Cell>
+      <Table.Cell className="flex items-center justify-center">
         <Menu.Root>
           <Menu.Trigger asChild>
             <button>

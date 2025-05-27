@@ -18,9 +18,9 @@ export default function ColorSelectorField({
   handleColorChange,
 }: ColorSelectorFieldProps) {
   return (
-    <div>
+    <div className="w-full">
       <label className="label-l2">{label}</label>
-      <div className="flex gap-2 mt-1">
+      <div className="flex gap-2 mt-1 flex-wrap">
         {colors.map((color) => {
           const isSelected = selectedColors.includes(color);
 
@@ -30,7 +30,7 @@ export default function ColorSelectorField({
               type="button"
               className={`p-1 rounded-full ${
                 isSelected
-                  ? "border-black border-2"
+                  ? "border-custom-900 dark:border-custom-50 border-2"
                   : "border-2 border-transparent"
               }`}
               onClick={() => handleColorChange(color)}

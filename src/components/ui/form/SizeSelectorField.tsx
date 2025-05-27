@@ -18,9 +18,9 @@ export default function SizeSelectorField({
   handleSizeChange,
 }: SizeSelectorFieldProps) {
   return (
-    <div>
+    <div className="w-full">
       <label className="label-l2">{label}</label>
-      <div className="flex gap-2 mt-1">
+      <div className="flex gap-2 flex-wrap mt-1">
         {sizes.map((size) => {
           const isSelected = selectedSizes.includes(size);
           return (
