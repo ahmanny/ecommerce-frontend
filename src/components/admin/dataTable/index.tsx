@@ -58,7 +58,7 @@ export default function DataTables({
     (currentPage + 1) * itemsPerPage
   );
   return (
-    <div className="bg-background-b1 min-h-screen p-5 ">
+    <div className="bg-background-b1 h-fit p-5 ">
       <div>
         <div className="flex  flex-wrap gap-4  justify-between items-center">
           <div className="flex items-center flex-1  justify-between">

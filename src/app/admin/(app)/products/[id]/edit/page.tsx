@@ -1,6 +1,6 @@
 "use client";
 
-import UpdateProductForm from "@/components/admin/productsManagement/update/UpdateProductForm";
+import UpdateProductForm from "@/components/admin/productsManagement/UpdateProductForm";
 import PageSkeleton from "@/components/ui/loaders/skeletons/PageSkeleton";
 import EmptyState from "@/components/ui/states/EmptyState";
 import ErrorState from "@/components/ui/states/ErrorState";

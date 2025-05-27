@@ -2,7 +2,7 @@
 
 import { useUpdateProduct } from "@/services/products/productQueries";
 import { IProduct } from "@/types/product.types";
-import ProductForm from "../ProductFormT";
+import ProductForm from "./ProductFormT";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
