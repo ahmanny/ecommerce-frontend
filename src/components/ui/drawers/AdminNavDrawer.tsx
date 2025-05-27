@@ -24,7 +24,7 @@ export default function AdminNavDrawer() {
       >
         <DrawerTrigger asChild>
           <button className="p-1 rounded-sm">
-            <MdMenu className="text-[18px] sm:text-[28px]" />
+            <MdMenu className="text-3xl" />
           </button>
         </DrawerTrigger>
         <Portal>

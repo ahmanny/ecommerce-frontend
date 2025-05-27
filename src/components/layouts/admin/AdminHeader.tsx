@@ -6,14 +6,21 @@ import LogoutButton from "@/components/ui/buttons/LogoutButton";
 
 export default function AdminHeader() {
   return (
-    <div className="flex justify-between items-center">
-      <div className="lg:hidden">
-        <AdminNavDrawer />
+    <div>
+      <div className="flex justify-between items-center">
+        <div className="lg:hidden">
+          <AdminNavDrawer />
+        </div>
+        <div className="hidden md:flex">
+          <BreadCrumbTwo />
+        </div>
+        <div className="flex justify-center items-center">
+          <ColorModeButton />
+          <LogoutButton routeTo="/admin/login" iconOnly />
+        </div>
       </div>
-      <BreadCrumbTwo />
-      <div className="flex justify-center items-center">
-        <ColorModeButton />
-        <LogoutButton routeTo="/admin/login" iconOnly />
+      <div className=" flex justify-center items-center md:hidden">
+        <BreadCrumbTwo />
       </div>
     </div>
   );
