@@ -12,7 +12,7 @@ export default function AddProductForm() {
   const handleAddProduct = (formData: FormData) => {
     mutate(formData, {
       onSuccess: () => {
-        toast.success("Product updated successfully!");
+        toast.success("Product Added successfully!");
         router.push("/admin/products");
       },
     });
