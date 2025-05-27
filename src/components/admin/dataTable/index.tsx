@@ -58,7 +58,7 @@ export default function DataTables({
     (currentPage + 1) * itemsPerPage
   );
   return (
-    <div className="bg-background-b1 h-fit p-5 ">
+    <div className="bg-background-b1 min-h-screen p-5 ">
       <div>
         <div className="flex  flex-wrap gap-4  justify-between items-center">
           <div className="flex items-center flex-1  justify-between">
@@ -119,67 +119,69 @@ export default function DataTables({
         </div>
       </div>
 
-      <div className="mt-5">
-        <Table.ScrollArea maxW="100%">
-          <Table.Root size="sm" bg={"inherit"}>
-            <Table.Header>
-              <Table.Row className="border-y-[0.1px] border-solid py-10 border-neutral-300 bg-inherit">
-                <Table.Cell></Table.Cell>
-                <Table.ColumnHeader className="text-foreground-f5 text-[18px]">
-                  <BiSortAlt2 />
-                </Table.ColumnHeader>
-                {tableHeaders.map((header, index) => (
-                  <Table.ColumnHeader
-                    key={index}
-                    className="text-foreground-f5 capitalize"
-                  >
-                    {header}
+      <div className="mt-5 flex flex-col justify-between">
+        {/* table for products, orders, customers and reviews */}
+        <div>
+          <Table.ScrollArea maxW="100%">
+            <Table.Root size="sm" bg={"inherit"}>
+              <Table.Header>
+                <Table.Row className="border-y-[0.1px] border-solid py-10 border-neutral-300 bg-inherit">
+                  <Table.Cell></Table.Cell>
+                  <Table.ColumnHeader className="text-foreground-f5 text-[18px]">
+                    <BiSortAlt2 />
                   </Table.ColumnHeader>
-                ))}
-                <Table.ColumnHeader className="flex justify-center">
-                  Action
-                </Table.ColumnHeader>
-              </Table.Row>
-            </Table.Header>
-
-            <Table.Body className=" capitalize bg-inherit">
-              {paginatedData.length === 0 ? (
-                <Table.Row className="bg-inherit">
-                  <Table.Cell
-                    colSpan={tableHeaders.length + 2}
-                    className="text-center"
-                  >
-                    No data available
-                  </Table.Cell>
+                  {tableHeaders.map((header, index) => (
+                    <Table.ColumnHeader
+                      key={index}
+                      className="text-foreground-f5 capitalize"
+                    >
+                      {header}
+                    </Table.ColumnHeader>
+                  ))}
+                  <Table.ColumnHeader className="flex justify-center">
+                    Action
+                  </Table.ColumnHeader>
                 </Table.Row>
-              ) : (
-                paginatedData.map((item, index) => (
-                  <Table.Row key={index} className="bg-inherit">
-                    {componentFor === "products" && isProduct(item) && (
-                      <ProductsRowsItem item={item} /> // Using ProductsRow component for products
-                    )}
-                    {componentFor === "orders" && isOrder(item) && (
-                      <OrdersRowsItem item={item} />
-                    )}
-                    {componentFor === "customers" && isCustomer(item) && (
-                      <CustomersRowsItem item={item} />
-                    )}
-                    {componentFor === "reviews" && isReview(item) && (
-                      <ReviewsRowsItem item={item} />
-                    )}
-                  </Table.Row>
-                ))
-              )}
-            </Table.Body>
-          </Table.Root>
-        </Table.ScrollArea>
-      </div>
+              </Table.Header>
 
-      {/* pagination for table  */}
-      <Pagination
-        pageCount={Math.ceil(filteredItems.length / itemsPerPage)}
-        onPageChange={(page) => setCurrentPage(page)}
-      />
-    </div>
+              <Table.Body className=" capitalize bg-inherit">
+                {paginatedData.length === 0 ? (
+                  <Table.Row className="bg-inherit">
+                    <Table.Cell
+                      colSpan={tableHeaders.length + 2}
+                      className="text-center"
+                    >
+                      No data available
+                    </Table.Cell>
+                  </Table.Row>
+                ) : (
+                  paginatedData.map((item, index) => (
+                    <Table.Row key={index} className="bg-inherit">
+                      {componentFor === "products" && isProduct(item) && (
+                        <ProductsRowsItem item={item} /> // Using ProductsRow component for products
+                      )}
+                      {componentFor === "orders" && isOrder(item) && (
+                        <OrdersRowsItem item={item} />
+                      )}
+                      {componentFor === "customers" && isCustomer(item) && (
+                        <CustomersRowsItem item={item} />
+                      )}
+                      {componentFor === "reviews" && isReview(item) && (
+                        <ReviewsRowsItem item={item} />
+                      )}
+                    </Table.Row>
+                  ))
+                )}
+              </Table.Body>
+            </Table.Root>
+          </Table.ScrollArea>
+        </div>
+        {/* pagination for table  */}
+        <Pagination
+          pageCount={Math.ceil(filteredItems.length / itemsPerPage)}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
+      </div>
+    </div> 
   );
 }
