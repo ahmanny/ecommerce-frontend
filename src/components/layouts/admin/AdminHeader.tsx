@@ -19,7 +19,7 @@ export default function AdminHeader() {
           <LogoutButton routeTo="/admin/login" iconOnly />
         </div>
       </div>
-      <div className=" flex items-center md:hidden">
+      <div className=" flex items-center px-3 md:hidden">
         <BreadCrumbTwo />
       </div>
     </div>

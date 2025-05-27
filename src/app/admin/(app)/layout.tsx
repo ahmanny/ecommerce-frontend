@@ -13,7 +13,7 @@ export default function AdminAppLayout({
       <div className="hidden lg:block lg:w-[260px] bg-background-b1">
         <AdminNavBar />
       </div>
-      <div className="pt-5 flex-1 md:mx-[20px] lg:mx-[48px]">
+      <div className="pt-5 flex-1 px-1 md:mx-[20px] lg:mx-[48px]">
         <AdminHeader />
         <div className="py-12">{children}</div>
       </div>
