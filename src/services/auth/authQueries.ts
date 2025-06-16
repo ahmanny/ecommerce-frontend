@@ -52,38 +52,46 @@ export const useLoginUser = () => {
     return useMutation({
         mutationFn: loginUser,
         onSuccess: async (data) => {
-            setCookie(null, "access-token", data.tokens.access_token, {
-                maxAge: 30 * 24 * 60 * 60,
-                path: "/",
-                secure: process.env.NODE_ENV === "production",
-            });
+            try {
+                setCookie(null, "access-token", data.tokens.access_token, {
+                    maxAge: 30 * 24 * 60 * 60,
+                    path: "/",
+                    secure: process.env.NODE_ENV === "production",
+                });
 
-            setCookie(null, "refresh-token", data.tokens.refresh_token, {
-                path: "/",
-                maxAge: 60 * 60 * 24 * 7,
-            });
+                setCookie(null, "refresh-token", data.tokens.refresh_token, {
+                    path: "/",
+                    maxAge: 60 * 60 * 24 * 7,
+                });
 
-            setCookie(null, "user-role", data.user.role, {
-                maxAge: 30 * 24 * 60 * 60,
-                path: "/",
-            });
+                setCookie(null, "user-role", data.user.role, {
+                    maxAge: 30 * 24 * 60 * 60,
+                    path: "/",
+                });
 
-            userStore.login(data.user, true);
+                userStore.login(data.user, true);
 
-            if (items.length !== 0) {
-                await syncCartMutation.mutateAsync({ items });
+                if (items.length !== 0) {
+                    await syncCartMutation.mutateAsync({ items });
+                }
+
+                await fetchCategories();
+                await fetchUserCart();
+                await fetchUserWishlist();
+
+                return true; // indicate success
+            } catch (err) {
+                console.error("Error during post-login tasks:", err);
+                throw err;
             }
-
-            fetchCategories();
-            fetchUserCart();
-            fetchUserWishlist();
         },
     });
+
 };
 
 
 
-// user Login 
+// admin Login 
 export const useLoginAdmin = () => {
     const userStore = useUserStore.getState();
     const { refetch: fetchCategories } = useFetchCategories()

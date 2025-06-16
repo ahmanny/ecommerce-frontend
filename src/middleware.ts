@@ -7,12 +7,12 @@ export function middleware(req: NextRequest) {
     const url = req.nextUrl;
 
     // // // Protect admin pages
-    // if (url.pathname.startsWith("/admin")) {
-    //     if ((!token && role !== "admin") && url.pathname !== "/admin/login") {
-    //         const callbackUrl = encodeURIComponent(url.pathname);
-    //         return NextResponse.redirect(new URL(`/admin/login?callbackUrl=${callbackUrl}`, req.url));
-    //     }
-    // }
+    if (url.pathname.startsWith("/admin")) {
+        if ((!token && role !== "admin") && url.pathname !== "/admin/login") {
+            const callbackUrl = encodeURIComponent(url.pathname);
+            return NextResponse.redirect(new URL(`/admin/login?callbackUrl=${callbackUrl}`, req.url));
+        }
+    }
 
     // // Profile access
     if (url.pathname.startsWith("/my-account") && !token) {

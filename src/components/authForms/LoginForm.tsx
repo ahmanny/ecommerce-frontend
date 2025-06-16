@@ -19,11 +19,13 @@ export default function LoginForm() {
   const loginMutation = useLoginUser();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/";
+  const callbackUrl = decodeURIComponent(
+    searchParams.get("callbackUrl") || "/"
+  );
 
   // function to handle submit form click.
   function submitForm(data: any) {
-    loginMutation.mutate(data, {
+    loginMutation.mutateAsync(data, {
       onSuccess: () => {
         router.push(callbackUrl);
       },
